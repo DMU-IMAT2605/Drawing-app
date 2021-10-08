@@ -1,6 +1,6 @@
 /*! \mainpage Lab 2 - Shapes
 *
-* This program gives you a basic SFML winow in which to draw your shapes.
+* This program gives you a basic SFML window in which to draw your shapes.
 *
 * The classes and files you use are up to you.  
 *
