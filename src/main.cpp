@@ -13,17 +13,20 @@
 * Contains the entry point of the application 
 */
 
-#include "SFML/Graphics.hpp"
-
+#include <main.h>
 
 int main() //!< Entry point for the application
 {
 	sf::RenderWindow window(sf::VideoMode(1024, 800), "Lab Book 1 - Shapes");
 	window.setFramerateLimit(60);
 
+	sf::Mouse mouse;
 	
 	while (window.isOpen())
 	{
+		Draw* drawing;
+		drawing = new Draw;
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -32,12 +35,12 @@ int main() //!< Entry point for the application
 				window.close();
 			}
 		}
-
+			
 		window.clear();
-
-		// Do your drawing here
-		
-
+		drawing->update_input(mouse, window);
+		drawing->render(window);
 		window.display();
 	}
 }
+
+
