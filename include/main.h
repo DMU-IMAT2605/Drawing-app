@@ -9,16 +9,21 @@ private:
 	sf::CircleShape circle;
 	sf::RectangleShape rect;
 	sf::RectangleShape line, line_box;
-	sf::FloatRect mouse_rect;
 	sf::ConvexShape triangle;	//point count == 3
-	sf::Vector2i starting_position;
 	sf::RectangleShape selector_box;
 	
+	std::string selected_shape;
+	sf::RectangleShape selected_rect;
+	sf::CircleShape selected_circle;
+	sf::ConvexShape selected_triangle;
+	sf::RectangleShape selected_line;
+
 	void init_variables();
 
 public:
 	Draw();
 
+	std::string get_selected_item();
 	void update_input(sf::Mouse& _mouse, sf::RenderWindow& _window);
 	void render(sf::RenderTarget& _target);
 };
@@ -31,6 +36,7 @@ Draw::Draw(){
 
 void Draw::init_variables()
 {
+
 	//Rectangle
 	rect.setSize(sf::Vector2f(30.f, 30.f));
 	rect.setOutlineThickness(5.f);
@@ -73,23 +79,101 @@ void Draw::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 {
 	sf::Vector2f mouse_pos = sf::Vector2f(_mouse.getPosition(_window));
 
-	if (rect.getGlobalBounds().contains(mouse_pos))
+	if (rect.getGlobalBounds().contains(mouse_pos) && selected_shape != "rectangle") {
 		rect.setOutlineColor(sf::Color::Red);
-	if (circle.getGlobalBounds().contains(mouse_pos))
+		if (_mouse.isButtonPressed(sf::Mouse::Left)) {
+			selected_shape = "rectangle";
+			rect.setOutlineColor(sf::Color::Green);
+
+			selected_rect.setSize(sf::Vector2f(60.f, 60.f));
+			selected_rect.setOutlineThickness(3.f);
+			selected_rect.setFillColor(sf::Color::Transparent);
+			selected_rect.setOutlineColor(sf::Color::White);
+			selected_rect.setPosition(sf::Vector2f(_window.getSize().x / 2 - selected_rect.getGlobalBounds().width / 2, _window.getSize().y / 2 - selected_rect.getGlobalBounds().height / 2));
+		}
+	}
+	else if (selected_shape != "rectangle")
+		rect.setOutlineColor(sf::Color::White);
+
+	if (circle.getGlobalBounds().contains(mouse_pos) && selected_shape != "circle") {
 		circle.setOutlineColor(sf::Color::Red);
-	if (triangle.getGlobalBounds().contains(mouse_pos))
+		if (_mouse.isButtonPressed(sf::Mouse::Left))
+		{
+			selected_shape = "circle";
+			circle.setOutlineColor(sf::Color::Green);
+
+			selected_circle.setRadius(25.f);
+			selected_circle.setOutlineThickness(5.f);
+			selected_circle.setFillColor(sf::Color::Transparent);
+			selected_circle.setOutlineColor(sf::Color::White);
+			selected_circle.setPosition(sf::Vector2f(_window.getSize().x / 2 - selected_circle.getGlobalBounds().width / 2, _window.getSize().y / 2 - selected_circle.getGlobalBounds().height / 2));
+		}
+	}
+	else if (selected_shape != "circle")
+		circle.setOutlineColor(sf::Color::White);
+
+	if (triangle.getGlobalBounds().contains(mouse_pos) && selected_shape != "triangle") {
 		triangle.setOutlineColor(sf::Color::Red);
-	if (line_box.getGlobalBounds().contains(mouse_pos))
-		line.setOutlineColor(sf::Color::Red);
+
+		if (_mouse.isButtonPressed(sf::Mouse::Left))
+		{
+			selected_shape = "triangle";
+			triangle.setOutlineColor(sf::Color::Green);
+
+			selected_triangle.setPointCount(3);
+			selected_triangle.setPoint(0, sf::Vector2f(0.f, 50.f));	selected_triangle.setPoint(1, sf::Vector2f(50.f, 50.f));	selected_triangle.setPoint(2, sf::Vector2f(25.f, 0.f));
+			selected_triangle.setOutlineThickness(3.f);
+			selected_triangle.setFillColor(sf::Color::Transparent);
+			selected_triangle.setOutlineColor(sf::Color::White);
+			selected_triangle.setPosition(sf::Vector2f(_window.getSize().x / 2 - selected_triangle.getGlobalBounds().width / 2, _window.getSize().y / 2 - selected_triangle.getGlobalBounds().height / 2));
+		}
+	}
+	else if (selected_shape != "triangle")
+		triangle.setOutlineColor(sf::Color::White);
 	
+	if (line_box.getGlobalBounds().contains(mouse_pos) && selected_shape != "line") {
+		line.setOutlineColor(sf::Color::Red);
+
+		if (_mouse.isButtonPressed(sf::Mouse::Left))
+		{
+			selected_shape = "line";
+			line.setOutlineColor(sf::Color::Green);
+
+
+			selected_line.setSize(sf::Vector2f(0.f, 50.f));
+			selected_line.setOutlineThickness(1.5f);
+			selected_line.setFillColor(sf::Color::Transparent);
+			selected_line.setOutlineColor(sf::Color::White);
+			selected_line.setPosition(sf::Vector2f(_window.getSize().x / 2 - selected_line.getGlobalBounds().width / 2, _window.getSize().y / 2 - selected_line.getGlobalBounds().height / 2));
+		}
+	}
+	else if (selected_shape != "line")
+		line.setOutlineColor(sf::Color::White);
+}
+
+std::string Draw::get_selected_item() {
+	return selected_shape;
 }
 
 void Draw::render(sf::RenderTarget& _target)
 {
 	_target.draw(this->selector_box);
 
+	if (selected_shape == "rectangle")
+		_target.draw(this->selected_rect);
+	else if (selected_shape == "circle")
+		_target.draw(this->selected_circle);
+	else if (selected_shape == "triangle")
+		_target.draw(this->selected_triangle);
+	else if (selected_shape == "line")
+		_target.draw(this->selected_line);
+
 	_target.draw(this->rect);
 	_target.draw(this->circle);
 	_target.draw(this->triangle);
 	_target.draw(this->line);
 }
+
+
+
+

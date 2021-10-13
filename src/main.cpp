@@ -21,11 +21,11 @@ int main() //!< Entry point for the application
 	window.setFramerateLimit(60);
 
 	sf::Mouse mouse;
+	Draw* drawing;
+	drawing = new Draw;
 	
 	while (window.isOpen())
 	{
-		Draw* drawing;
-		drawing = new Draw;
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -36,11 +36,12 @@ int main() //!< Entry point for the application
 			}
 		}
 			
+
+
 		window.clear();
 		drawing->update_input(mouse, window);
 		drawing->render(window);
 		window.display();
 	}
 }
-
 
