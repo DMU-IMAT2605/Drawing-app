@@ -145,12 +145,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Circle.cpp" />
-    <ClCompile Include="src\Draw.cpp" />
+    <ClCompile Include="src\Draw_Buffer.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Circle.h" />
-    <ClInclude Include="include\Draw.h" />
+    <ClInclude Include="include\Draw_Buffer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\LAB_BOOK_1\v16\Browse.VC.db" />

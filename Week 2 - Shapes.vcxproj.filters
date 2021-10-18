@@ -21,7 +21,7 @@
     <ClCompile Include="src\Circle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Draw.cpp">
+    <ClCompile Include="src\Draw_Buffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="include\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Draw.h">
+    <ClInclude Include="include\Draw_Buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,10 @@
 #include "Circle.h"
 
-Circle::Circle(sf::Vector2f _rad, sf::Vector2f _pos, int _res)
+Circle::Circle()
+{
+}
+
+Circle::Circle(sf::Vector2f _rad, sf::Vector2f _pos, float _res)
 {
 	circle_shape(_rad, _pos, _res);
 }
@@ -8,7 +12,7 @@ Circle::Circle(sf::Vector2f _rad, sf::Vector2f _pos, int _res)
 Circle::~Circle()
 {}
 
-inline sf::VertexArray Circle::circle_shape(sf::Vector2f _radius, sf::Vector2f _pos, int _res)
+inline sf::VertexArray Circle::circle_shape(sf::Vector2f _radius, sf::Vector2f _pos, float _res)
 {
 	vxr.resize(_res);
 	vxr.setPrimitiveType(sf::LinesStrip);
@@ -19,7 +23,7 @@ inline sf::VertexArray Circle::circle_shape(sf::Vector2f _radius, sf::Vector2f _
 		vxr[i] = sf::Vector2f( _pos.x + cos(radians) * _radius.x, _pos.y + sin(radians) * _radius.y);
 	}
 	
-	vxr[_res-1] = vxr[0];
+	vxr[_res - 1] = vxr[0];
 	
 	return vxr;
 }
