@@ -13,35 +13,15 @@
 * Contains the entry point of the application 
 */
 
-#include <main.h>
+#include <Draw.h>
 
 int main() //!< Entry point for the application
 {
-	sf::RenderWindow window(sf::VideoMode(1024, 800), "Lab Book 1 - Shapes");
-	window.setFramerateLimit(60);
+	Draw app;
 
-	sf::Mouse mouse;
-	Draw* drawing;
-	drawing = new Draw;
-	
-	while (window.isOpen())
-	{
+	app.run();
 
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-			{
-				window.close();
-			}
-		}
-			
-
-
-		window.clear();
-		drawing->update_input(mouse, window);
-		drawing->render(window);
-		window.display();
-	}
+	//!< End of application			
+	return 0;
 }
 

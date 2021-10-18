@@ -144,10 +144,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Draw.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\main.h" />
+    <ClInclude Include="include\Circle.h" />
+    <ClInclude Include="include\Draw.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\LAB_BOOK_1\v16\Browse.VC.db" />
