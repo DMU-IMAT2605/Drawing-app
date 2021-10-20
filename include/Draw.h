@@ -1,27 +1,25 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include "Circle.h"
+#include "Shape.h"
 
-class Draw_Buffer
+class Draw
 
 {
 private:
 	// Vars - PR
 	sf::RenderWindow* window;
 	sf::Mouse* mouse;
-
-	Circle* circle_shad;
 	
-	std::vector<Circle*> shapes_buffer;
+	std::vector<Shape*> shapes_buffer;
+
+	std::string choosen_shape;
 
 	sf::Clock t_shapes_spawn;
 
 	// Funcs - PR
 	void initWindow();
-	void initCircle();
 
-	void drawCircle(sf::Mouse& _m, sf::Window& _w);
+	void drawShape(sf::Mouse& _m, sf::Window& _w);
 
 	void shapeBufferHandler();
 
@@ -33,8 +31,8 @@ private:
 
 public:
 	// Constr & Deconstr -
-	Draw_Buffer();
-	virtual ~Draw_Buffer();
+	Draw();
+	virtual ~Draw();
 
 	// Vars - PB
 

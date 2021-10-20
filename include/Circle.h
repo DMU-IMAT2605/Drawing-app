@@ -8,7 +8,6 @@
 class Circle
 {
 public:
-	Circle();
 	Circle(sf::Vector2f _rad, sf::Vector2f _pos, float _res);
 	~Circle();
 

@@ -1,9 +1,5 @@
 #include "Circle.h"
 
-Circle::Circle()
-{
-}
-
 Circle::Circle(sf::Vector2f _rad, sf::Vector2f _pos, float _res)
 {
 	circle_shape(_rad, _pos, _res);

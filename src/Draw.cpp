@@ -1,13 +1,13 @@
-#include "Draw_Buffer.h"
+#include "Draw.h"
 
 
-Draw_Buffer::Draw_Buffer()
+Draw::Draw()
 {
 	this->initWindow();
 	this->initCircle();
 }
 
-Draw_Buffer::~Draw_Buffer()
+Draw::~Draw()
 {
 	delete this->window;
 	
@@ -17,7 +17,7 @@ Draw_Buffer::~Draw_Buffer()
 	}
 }
 
-void Draw_Buffer::initWindow()
+void Draw::initWindow()
 {
 	// INITIAL VALUES
 	std::string title = "Shapes";
@@ -37,17 +37,12 @@ void Draw_Buffer::initWindow()
 	this->window->setVerticalSyncEnabled(veritical_sync_enabled);
 }
 
-void Draw_Buffer::initCircle()
+void Draw::drawShape(sf::Mouse& _m, sf::Window& _w)
 {
-	//this->circle = new Circle;
+	shapes_buffer.push_back(new Shape(/* put code here */);
 }
 
-void Draw_Buffer::drawCircle(sf::Mouse& _m, sf::Window& _w)
-{
-	shapes_buffer.push_back(new Circle(sf::Vector2f(100.f, 100.f), sf::Vector2f(_m.getPosition(_w).x, _m.getPosition(_w).y), 120));
-}
-
-void Draw_Buffer::run()
+void Draw::run()
 {
 	while (this->window->isOpen())
 	{
@@ -56,7 +51,7 @@ void Draw_Buffer::run()
 	}
 }
 
-void Draw_Buffer::shapeBufferHandler()
+void Draw::shapeBufferHandler()
 {
 	if (this->shapes_buffer.size() > 1000)
 	{
@@ -64,7 +59,7 @@ void Draw_Buffer::shapeBufferHandler()
 	}
 }
 
-void Draw_Buffer::updatePollEvents()
+void Draw::updatePollEvents()
 {
 	sf::Event Session;
 	while (this->window->pollEvent(Session))
@@ -74,12 +69,10 @@ void Draw_Buffer::updatePollEvents()
 	}
 }
 
-void Draw_Buffer::updateInput()
+void Draw::updateInput()
 {
-	sf::Vector2f arr[2];
 	if (mouse->isButtonPressed(sf::Mouse::Left))
 	{
-
 		if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 		{
 			this->drawCircle(*mouse, *window);
@@ -88,7 +81,7 @@ void Draw_Buffer::updateInput()
 	}
 }
 
-void Draw_Buffer::update()
+void Draw::update()
 {
 	this->updatePollEvents();
 	this->updateInput();
@@ -96,7 +89,7 @@ void Draw_Buffer::update()
 	
 }
 
-void Draw_Buffer::render()
+void Draw::render()
 {
 	this->window->clear();
 
