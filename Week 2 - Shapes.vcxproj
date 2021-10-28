@@ -144,9 +144,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Draw_Buffer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="include\Draw_Buffer.h" />
   </ItemGroup>
   <ItemGroup>
