@@ -144,12 +144,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\Draw_Buffer.h" />
+    <ClInclude Include="include\Circle.h" />
+    <ClInclude Include="include\Draw.h" />
+    <ClInclude Include="include\Shape.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\LAB_BOOK_1\v16\Browse.VC.db" />
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Draw.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Shape.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
