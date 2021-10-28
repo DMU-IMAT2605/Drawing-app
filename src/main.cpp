@@ -13,11 +13,11 @@
 * Contains the entry point of the application 
 */
 
-#include <Draw_Buffer.h>
+#include <Draw.h>
 
 int main() //!< Entry point for the application
 {
-	Draw_Buffer app;
+	Draw app;
 
 	app.run();
 

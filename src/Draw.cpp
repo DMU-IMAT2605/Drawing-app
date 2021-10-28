@@ -4,7 +4,6 @@
 Draw::Draw()
 {
 	this->initWindow();
-	this->initCircle();
 }
 
 Draw::~Draw()
@@ -39,7 +38,7 @@ void Draw::initWindow()
 
 void Draw::drawShape(sf::Mouse& _m, sf::Window& _w)
 {
-	shapes_buffer.push_back(new Shape(/* put code here */);
+	shapes_buffer.push_back(new Shape(sf::Vector2f(30.f, 30.f), sf::Vector2f(100.f, 150.f), 90.f));
 }
 
 void Draw::run()
@@ -75,7 +74,7 @@ void Draw::updateInput()
 	{
 		if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 		{
-			this->drawCircle(*mouse, *window);
+			this->drawShape(*mouse, *window);
 			this->t_shapes_spawn.restart();
 		}
 	}

@@ -24,12 +24,24 @@
     <ClCompile Include="src\Draw_Buffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Draw_Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Draw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
