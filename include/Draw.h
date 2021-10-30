@@ -10,11 +10,9 @@ private:
 	// Vars - PR
 	sf::RenderWindow* window;
 	sf::Mouse* mouse;
-
-	std::vector<Shape*> shapes_buffer;
 	Shape* shape;
 
-	std::string choosen_shape;
+	std::vector<Shape*> shapes_buffer;
 
 	sf::Clock t_shapes_spawn;
 
