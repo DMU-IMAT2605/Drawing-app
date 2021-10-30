@@ -52,6 +52,32 @@ sf::Vector2f Shape::getSize()
 	return this->default_size;
 }
 
+Shape* Shape::Create(int _id)
+{
+	switch (_id)
+	{
+	case 1:
+		return new Circle;
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	case 7:
+		break;
+
+	default:
+		return nullptr;
+	}
+
+}
+
 void Shape::setPosition(sf::Vector2i _pos)
 {
 	for (size_t i = 0; i < RESOLUTION; i++)
@@ -62,7 +88,6 @@ void Shape::setPosition(sf::Vector2i _pos)
 
 	this->vxr[RESOLUTION - 1] = vxr[0];
 }
-
 
 void Shape::render(sf::RenderTarget& _t)
 {
