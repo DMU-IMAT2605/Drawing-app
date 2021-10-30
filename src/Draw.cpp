@@ -4,6 +4,7 @@
 Draw::Draw()
 {
 	this->initWindow();
+	this->initShape();
 }
 
 Draw::~Draw()
@@ -36,9 +37,15 @@ void Draw::initWindow()
 	this->window->setVerticalSyncEnabled(veritical_sync_enabled);
 }
 
-void Draw::drawShape(sf::Mouse& _m, sf::Window& _w)
+void Draw::initShape()
 {
-	shapes_buffer.push_back(new Shape(sf::Vector2f(30.f, 30.f), _m.getPosition(_w), 120));
+	this->shape = new Shape(mouse->getPosition(*window));
+	shapes_buffer.push_back(new Shape(mouse->getPosition(*window)));
+}
+
+void Draw::shadowShape()
+{
+	shapes_buffer[0]->setPosition(mouse->getPosition(*window));
 }
 
 void Draw::run()
@@ -72,19 +79,40 @@ void Draw::updatePollEvents()
 
 void Draw::updateInput(sf::Event _e)
 {	
+	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
+
 	if (this->mouse->isButtonPressed(sf::Mouse::Left))
 	{
 		if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 		{
-			this->drawShape(*mouse, *window);
+			this->shapes_buffer.push_back(new Shape(mouse->getPosition(*window), shape->getSize()));
 			this->t_shapes_spawn.restart();
 		}
+	}
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		this->shapes_buffer[0]->changeSize(sf::Vector2f(30, 30));
+		this->shape->changeSize(sf::Vector2f(30, 30));
 	}
 
 	if (_e.type == sf::Event::MouseWheelMoved)
 	{
-		// display number of ticks mouse wheel has moved
-		std::cout << _e.mouseWheel.delta << '\n';
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+		{
+			this->shapes_buffer[0]->changeSize(sf::Vector2f(delta, 0));
+			this->shape->changeSize(sf::Vector2f(delta, 0));
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+		{
+			this->shapes_buffer[0]->changeSize(sf::Vector2f(0, delta));
+			this->shape->changeSize(sf::Vector2f(0, delta));	
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+		{
+			this->shapes_buffer[0]->changeSize(sf::Vector2f(delta, delta));
+			this->shape->changeSize(sf::Vector2f(delta, delta));
+		}
 	}
 }
 
@@ -92,7 +120,7 @@ void Draw::update()
 {
 	this->updatePollEvents();
 	this->shapeBufferHandler();
-
+	this->shadowShape();
 }
 
 void Draw::render()

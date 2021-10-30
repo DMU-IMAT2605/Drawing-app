@@ -12,6 +12,7 @@ private:
 	sf::Mouse* mouse;
 
 	std::vector<Shape*> shapes_buffer;
+	Shape* shape;
 
 	std::string choosen_shape;
 
@@ -19,8 +20,9 @@ private:
 
 	// Funcs - PR
 	void initWindow();
+	void initShape();
 
-	void drawShape(sf::Mouse& _m, sf::Window& _w);
+	void shadowShape();
 
 	void shapeBufferHandler();
 
