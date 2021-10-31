@@ -39,8 +39,11 @@ void Draw::initWindow()
 
 void Draw::initShape()
 {
-	this->shape = new Shape(mouse->getPosition(*window));
-	shapes_buffer.push_back(new Shape(mouse->getPosition(*window)));
+	//this->shape = new Shape(mouse->getPosition(*window));
+	//shapes_buffer.push_back(new Shape(mouse->getPosition(*window)));
+	
+	this->shape = Shape::createDefault(1, this->mouse->getPosition(*window));
+	this->shapes_buffer.push_back(Shape::createDefault(1, this->mouse->getPosition(*window)));
 }
 
 void Draw::shadowShape()
@@ -85,7 +88,7 @@ void Draw::updateInput(sf::Event _e)
 	{
 		if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 		{
-			this->shapes_buffer.push_back(new Shape(mouse->getPosition(*window), shape->getSize()));
+			this->shapes_buffer.push_back(Shape::create(1, mouse->getPosition(*window), shape->getSize()));
 			this->t_shapes_spawn.restart();
 		}
 	}

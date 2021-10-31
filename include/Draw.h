@@ -30,7 +30,7 @@ private:
 	void update();
 	void render();
 
-public:
+public: 
 	// Constr & Deconstr -
 	Draw();
 	virtual ~Draw();
