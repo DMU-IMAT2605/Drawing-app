@@ -7,9 +7,8 @@ class Shape
 {
 public:
 	Shape();
+
 	virtual ~Shape();
-	static Shape* create(int _id, sf::Vector2i _pos, sf::Vector2f _size);
-	static Shape* createDefault(int _id, sf::Vector2i _pos);
 
 	virtual void changeSize(sf::Vector2f _delta) = 0;
 	virtual void setPosition(sf::Vector2i _pos) = 0;

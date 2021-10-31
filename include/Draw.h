@@ -2,6 +2,7 @@
 #pragma once
 
 #include "Shape.h"
+#include "Circle.h"
 
 class Draw
 

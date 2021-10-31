@@ -1,10 +1,5 @@
 #include "Circle.h"
 
-Circle::Circle()
-{
-
-}
-
 Circle::Circle(sf::Vector2i _pos)
 {
 	this->vxr.resize(RESOLUTION);

@@ -10,7 +10,6 @@
 class Circle: public Shape
 {
 public:
-	Circle();
 	Circle(sf::Vector2i _pos);
 	Circle(sf::Vector2i _pos, sf::Vector2f _size);
 	~Circle();
