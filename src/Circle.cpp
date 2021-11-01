@@ -21,6 +21,13 @@ Circle::Circle(sf::Vector2i _pos, sf::Vector2f _size)
 	for (size_t i = 0; i < RESOLUTION; i++)
 	{
 		this->vxr[i] = sf::Vector2f(_pos.x + cos(RAD * i) * _size.x, _pos.y + sin(RAD * i) * _size.y);
+		
+		//DONT USE IT IF YOU HAVE EPILEPSY
+		//this->vxr[i].color = sf::Color::Red;
+		//if (i % 2 == 0)
+		//	this->vxr[i].color = sf::Color::Blue;
+		//if (i % 3 == 0)
+		//	this->vxr[i].color = sf::Color::Green;
 	}
 
 	this->vxr[RESOLUTION - 1] = vxr[0];

@@ -10,6 +10,8 @@ Draw::Draw()
 Draw::~Draw()
 {
 	delete this->window;
+	delete this->mouse;
+	delete this->shape;
 
 	for (auto& i : this->shapes_buffer)
 	{
@@ -127,9 +129,9 @@ void Draw::render()
 {
 	this->window->clear();
 
-	for (auto* Circle : this->shapes_buffer)
+	for (auto* Shapes : this->shapes_buffer)
 	{
-		Circle->render(*this->window);
+		Shapes->render(*this->window);
 	}
 
 
