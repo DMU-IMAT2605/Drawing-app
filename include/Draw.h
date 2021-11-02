@@ -1,7 +1,8 @@
 #pragma once
 #pragma once
 
-#include "Shape.h"
+#include "Selector.h"
+#include "Circle.h"
 
 class Draw
 
@@ -10,6 +11,7 @@ private:
 	// Vars - PR
 	sf::RenderWindow* window;
 	sf::Mouse* mouse;
+	Selector* selector_box;	//test
 	Shape* shape;
 
 	std::vector<Shape*> shapes_buffer;
@@ -30,7 +32,7 @@ private:
 	void update();
 	void render();
 
-public:
+public: 
 	// Constr & Deconstr -
 	Draw();
 	virtual ~Draw();

@@ -1,23 +1,23 @@
 #pragma once
 
-#include "Circle.h"
+#include <iostream>
+#include <SFML/Graphics.hpp>
 
 class Shape
 {
 public:
-	Shape(sf::Vector2i _pos);
-	Shape(sf::Vector2i _pos, sf::Vector2f _size);
-	~Shape();
+	Shape();
 
-	/*virtual*/ void changeSize(sf::Vector2f _delta);
-	/*virtual*/ void setPosition(sf::Vector2i _pos);
-	/*virtual*/ void render(sf::RenderTarget& _t);
+	virtual ~Shape();
+
+	virtual void changeSize(sf::Vector2f _delta) = 0;
+	virtual void setPosition(sf::Vector2i _pos) = 0;
+	virtual void render(sf::RenderTarget& _t) = 0;
+
+	sf::Vector2f getSize() { return this->size; };
 	
-	/*virtual*/ sf::Vector2f getSize();
-
-private:
-	sf::Vector2f default_size = sf::Vector2f(30, 30);
-	sf::VertexArray vxr;
+protected:
+	sf::Vector2f size = sf::Vector2f(30, 30);
 };
 
 
