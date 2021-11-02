@@ -53,45 +53,49 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 {
 	sf::Vector2f mouse_pos = sf::Vector2f(_mouse.getPosition(_window));
 
-	if (rect.getGlobalBounds().contains(mouse_pos) && selected_shape != 1) {
+	if (rect.getGlobalBounds().contains(mouse_pos) && selected_shape != 1) {	//rectangle
 		rect.setOutlineColor(sf::Color::Red);
 		if (_mouse.isButtonPressed(sf::Mouse::Left)) {
 			selected_shape = 1;
+			std::cout << "rectangle\n";
 			rect.setOutlineColor(sf::Color::Green);
 		}
 	}
 	else if (selected_shape != 1)
 		rect.setOutlineColor(sf::Color::White);
 
-	if (circle.getGlobalBounds().contains(mouse_pos) && selected_shape != 2) {
+	if (circle.getGlobalBounds().contains(mouse_pos) && selected_shape != 2) {	//circle
 		circle.setOutlineColor(sf::Color::Red);
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 2;
+			std::cout << "circle\n";
 			circle.setOutlineColor(sf::Color::Green);
 		}
 	}
 	else if (selected_shape != 2)
 		circle.setOutlineColor(sf::Color::White);
 
-	if (triangle.getGlobalBounds().contains(mouse_pos) && selected_shape != 3) {
+	if (triangle.getGlobalBounds().contains(mouse_pos) && selected_shape != 3) {	//triangle
 		triangle.setOutlineColor(sf::Color::Red);
 
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 3;
+			std::cout << "triangle\n";
 			triangle.setOutlineColor(sf::Color::Green);
 		}
 	}
 	else if (selected_shape != 3)
 		triangle.setOutlineColor(sf::Color::White);
 
-	if (line_box.getGlobalBounds().contains(mouse_pos) && selected_shape != 4) {
+	if (line_box.getGlobalBounds().contains(mouse_pos) && selected_shape != 4) {	//line
 		line.setOutlineColor(sf::Color::Red);
 
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 4;
+			std::cout << "line\n";
 			line.setOutlineColor(sf::Color::Green);
 		}
 	}

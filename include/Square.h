@@ -2,6 +2,9 @@
 
 #include "Shape.h"
 
+//#define DEF_SIZE_X def_size.x / 2
+//#define DEF_SIZE_Y def_size.y / 2
+
 class Square :	public Shape
 {
 public:

@@ -5,7 +5,7 @@ Draw::Draw()
 {
 	this->initWindow();
 	this->initShape();
-	this->selector_box = new Selector(*this->window);	//test
+	this->selector_box = new Selector(*this->window);
 }
 
 Draw::~Draw()
@@ -43,8 +43,11 @@ void Draw::initWindow()
 
 void Draw::initShape()
 {
-	this->shape = new Circle(mouse->getPosition(*window));
-	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	//this->shape = new Circle(mouse->getPosition(*window));
+	//shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	
+	this->shape = new Square(mouse->getPosition(*window));	//test
+	shapes_buffer.push_back(new Square(mouse->getPosition(*window))); //test
 }
 
 void Draw::shadowShape()
@@ -85,17 +88,10 @@ void Draw::updateInput(sf::Event _e)
 {	
 	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
 
+	this->selector_box->update_input(*this->mouse, *this->window);	//test
+
 	if (selector_box->contains(mouse->getPosition(*window)) == 0)
 	{
-		if (this->mouse->isButtonPressed(sf::Mouse::Left))
-		{
-			if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
-			{
-				this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));
-				this->t_shapes_spawn.restart();
-			}
-		}
-
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 		{
 			this->shapes_buffer[0]->changeSize(sf::Vector2f(30, 30));
@@ -120,7 +116,18 @@ void Draw::updateInput(sf::Event _e)
 				this->shape->changeSize(sf::Vector2f(delta, delta));
 			}
 		}
+
+		if (this->mouse->isButtonPressed(sf::Mouse::Left))
+		{
+			if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
+			{
+				//this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));	
+				this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), shape->getSize()));	//test
+				this->t_shapes_spawn.restart();
+			}
+		}
 	}
+	
 }
 
 void Draw::update()
@@ -128,7 +135,7 @@ void Draw::update()
 	this->updatePollEvents();
 	this->shapeBufferHandler();
 	this->shadowShape();
-	this->selector_box->update_input(*this->mouse, *this->window);	//test
+	
 }
 
 void Draw::render()
@@ -141,7 +148,8 @@ void Draw::render()
 	{
 		Shapes->render(*this->window);
 	}
-	this->selector_box->render(*this->window);	//test
+
+	this->selector_box->render(*this->window);
 
 	this->window->display();
 }
