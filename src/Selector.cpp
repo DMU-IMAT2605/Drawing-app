@@ -38,7 +38,7 @@ void Selector::initVariables(sf::RenderWindow& _win)
 	line.setOutlineThickness(3.f);
 	line.setFillColor(sf::Color::Transparent);
 	line.setOutlineColor(sf::Color::White);
-	line.setPosition(sf::Vector2f(_win.getSize().x - 28.5f, 270.f)); line_box.setPosition(sf::Vector2f(_win.getSize().x - 60.f, 270.f));
+	line.setPosition(sf::Vector2f(_win.getSize().x - 28.5f, 270.f)); line_box.setPosition(sf::Vector2f(_win.getSize().x - 45.f, 270.f));
 
 
 	//Selector box
