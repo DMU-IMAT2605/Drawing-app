@@ -43,16 +43,20 @@ void Draw::initWindow()
 
 void Draw::initShape()
 {
+
+	this->shape = new Square(mouse->getPosition(*window));	
+	shapes_buffer.push_back(new Square(mouse->getPosition(*window))); 
+	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+
 	//this->shape = new Circle(mouse->getPosition(*window));
 	//shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	
-	this->shape = new Square(mouse->getPosition(*window));	//test
-	shapes_buffer.push_back(new Square(mouse->getPosition(*window))); //test
 }
 
-void Draw::shadowShape()
+void Draw::indexShape()
 {
-	shapes_buffer[0]->setPosition(mouse->getPosition(*window));
+	shapes_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
 }
 
 void Draw::run()
@@ -94,7 +98,7 @@ void Draw::updateInput(sf::Event _e)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 		{
-			this->shapes_buffer[0]->changeSize(sf::Vector2f(30, 30));
+			this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
 			this->shape->changeSize(sf::Vector2f(30, 30));
 		}
 
@@ -102,17 +106,17 @@ void Draw::updateInput(sf::Event _e)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
-				this->shapes_buffer[0]->changeSize(sf::Vector2f(delta, 0));
+				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, 0));
 				this->shape->changeSize(sf::Vector2f(delta, 0));
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 			{
-				this->shapes_buffer[0]->changeSize(sf::Vector2f(0, delta));
+				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(0, delta));
 				this->shape->changeSize(sf::Vector2f(0, delta));
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 			{
-				this->shapes_buffer[0]->changeSize(sf::Vector2f(delta, delta));
+				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, delta));
 				this->shape->changeSize(sf::Vector2f(delta, delta));
 			}
 		}
@@ -121,8 +125,25 @@ void Draw::updateInput(sf::Event _e)
 		{
 			if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 			{
-				//this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));	
-				this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), shape->getSize()));	//test
+				switch (selector_box->getSelected())
+				{
+				case 1:
+					this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), shape->getSize()));
+					std::cout << "rectangle\n"; // test
+					break;
+				case 2:
+					this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));	
+					std::cout << "circle\n";
+					break;
+				case 3:
+					std::cout << "triangle\n";
+					break;
+				case 4:
+					std::cout << "line\n";
+					break;
+				default:
+					break;
+				}
 				this->t_shapes_spawn.restart();
 			}
 		}
@@ -134,20 +155,25 @@ void Draw::update()
 {
 	this->updatePollEvents();
 	this->shapeBufferHandler();
-	this->shadowShape();
+	this->indexShape();
 	
 }
 
 void Draw::render()
 {
 	this->window->clear();
-
-
-	for (auto* Shapes : this->shapes_buffer)
-
+	
+	for (size_t i= 4; i < shapes_buffer.size(); i++)
 	{
-		Shapes->render(*this->window);
+		shapes_buffer[i]->render(*this->window);
 	}
+
+	shapes_buffer[selector_box->getSelected() - 1]->render(*this->window);
+
+	//for (auto&& Shapes : shapes_buffer)
+	//{
+	//	
+	//}
 
 	this->selector_box->render(*this->window);
 

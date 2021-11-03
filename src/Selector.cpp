@@ -9,6 +9,11 @@ Selector::~Selector()
 {
 }
 
+int Selector::getSelected()
+{
+	return selected_shape;
+}
+
 void Selector::initVariables(sf::RenderWindow& _win)
 {
 	//Rectangle
@@ -57,7 +62,6 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 		rect.setOutlineColor(sf::Color::Red);
 		if (_mouse.isButtonPressed(sf::Mouse::Left)) {
 			selected_shape = 1;
-			std::cout << "rectangle\n";
 			rect.setOutlineColor(sf::Color::Green);
 		}
 	}
@@ -69,7 +73,6 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 2;
-			std::cout << "circle\n";
 			circle.setOutlineColor(sf::Color::Green);
 		}
 	}
@@ -82,7 +85,6 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 3;
-			std::cout << "triangle\n";
 			triangle.setOutlineColor(sf::Color::Green);
 		}
 	}
@@ -95,7 +97,6 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 4;
-			std::cout << "line\n";
 			line.setOutlineColor(sf::Color::Green);
 		}
 	}
