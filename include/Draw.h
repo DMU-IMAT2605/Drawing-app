@@ -1,9 +1,6 @@
 #pragma once
-#pragma once
 
 #include "Selector.h"
-#include "Circle.h"
-#include "Square.h"
 
 class Draw
 

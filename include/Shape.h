@@ -3,6 +3,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#define PI 3.14159265
+#define RESOLUTION 360
+#define RAD (PI/60)
+#define DEFAULT_SIZE sf::Vector2f(30, 30)
+
+
 class Shape
 {
 public:
@@ -17,7 +23,7 @@ public:
 	sf::Vector2f getSize() { return this->def_size; };
 	
 protected:
-	sf::Vector2f def_size = sf::Vector2f(30, 30);
+	sf::Vector2f def_size = DEFAULT_SIZE;
 };
 
 

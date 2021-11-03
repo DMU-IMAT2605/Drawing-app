@@ -2,11 +2,6 @@
 
 #include <Shape.h>
 
-#define PI 3.14159265
-#define RESOLUTION 360
-#define RAD (PI/60)
-
-
 class Circle: public Shape
 {
 public:

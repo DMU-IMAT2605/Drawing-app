@@ -1,12 +1,12 @@
 #pragma once
 
 #include "Shape.h"
+#include "Circle.h"
+#include "Square.h"
 
 class Selector
 {
 private:
-	Shape* shape;
-
 	sf::RectangleShape selector_box;
 
 	sf::RectangleShape rect; //id: 1

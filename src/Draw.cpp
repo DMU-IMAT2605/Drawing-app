@@ -135,11 +135,11 @@ void Draw::updateInput(sf::Event _e)
 				switch (selector_box->getSelected())
 				{
 				case 1:
-					this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), shape->getSize()));
+					this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
 				case 2:
-					this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));
+					this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
 				case 3:
@@ -166,7 +166,7 @@ void Draw::updateInput(sf::Event _e)
 			selection_buffer[1] = selection_buffer[0];
 			selection_buffer[0] = selector_box->getSelected();
 			if (selection_buffer[0] != selection_buffer[1]) {
-				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
 				this->shape->changeSize(sf::Vector2f(30, 30));
 			}
 		}
