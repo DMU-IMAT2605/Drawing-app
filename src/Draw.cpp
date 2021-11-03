@@ -51,7 +51,7 @@ void Draw::initShape()
 	this->shape = new Square(mouse->getPosition(*window));	
 	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
+	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	//test
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
 
 	selection_buffer[0] = 1;
@@ -143,7 +143,7 @@ void Draw::updateInput(sf::Event _e)
 					break;
 
 				case 3:
-					std::cout << "triangle\n";
+					this->shapes_buffer.push_back(new Triangle(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
 				case 4:
