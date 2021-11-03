@@ -60,7 +60,8 @@ void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
 
 	if (rect.getGlobalBounds().contains(mouse_pos) && selected_shape != 1) {	//rectangle
 		rect.setOutlineColor(sf::Color::Red);
-		if (_mouse.isButtonPressed(sf::Mouse::Left)) {
+		if (_mouse.isButtonPressed(sf::Mouse::Left)) 
+		{
 			selected_shape = 1;
 			rect.setOutlineColor(sf::Color::Green);
 		}

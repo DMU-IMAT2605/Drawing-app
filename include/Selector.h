@@ -16,7 +16,7 @@ private:
 
 	void initVariables(sf::RenderWindow& _win);
 
-public:
+public: 
 	Selector(sf::RenderWindow& _win);
 	~Selector();
 	int getSelected();

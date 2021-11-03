@@ -19,6 +19,11 @@ Draw::~Draw()
 	{
 		delete i;
 	}
+
+	for (auto& i : this->shapes_index_buffer)
+	{
+		delete i;
+	}
 }
 
 void Draw::initWindow()
@@ -43,20 +48,16 @@ void Draw::initWindow()
 
 void Draw::initShape()
 {
-
 	this->shape = new Square(mouse->getPosition(*window));	
-	shapes_buffer.push_back(new Square(mouse->getPosition(*window))); 
-	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
-
-	//this->shape = new Circle(mouse->getPosition(*window));
-	//shapes_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));
+	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
+	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
+	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
 }
 
 void Draw::indexShape()
 {
-	shapes_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
+	shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
 }
 
 void Draw::run()
@@ -92,13 +93,13 @@ void Draw::updateInput(sf::Event _e)
 {	
 	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
 
-	this->selector_box->update_input(*this->mouse, *this->window);	//test
+	this->selector_box->update_input(*this->mouse, *this->window);
 
 	if (selector_box->contains(mouse->getPosition(*window)) == 0)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 		{
-			this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
+			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
 			this->shape->changeSize(sf::Vector2f(30, 30));
 		}
 
@@ -106,17 +107,17 @@ void Draw::updateInput(sf::Event _e)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
-				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, 0));
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, 0));
 				this->shape->changeSize(sf::Vector2f(delta, 0));
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 			{
-				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(0, delta));
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(0, delta));
 				this->shape->changeSize(sf::Vector2f(0, delta));
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 			{
-				this->shapes_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, delta));
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, delta));
 				this->shape->changeSize(sf::Vector2f(delta, delta));
 			}
 		}
@@ -162,18 +163,13 @@ void Draw::update()
 void Draw::render()
 {
 	this->window->clear();
-	
-	for (size_t i= 4; i < shapes_buffer.size(); i++)
+
+	for (auto&& Shapes : shapes_buffer)
 	{
-		shapes_buffer[i]->render(*this->window);
+		Shapes->render(*this->window);
 	}
-
-	shapes_buffer[selector_box->getSelected() - 1]->render(*this->window);
-
-	//for (auto&& Shapes : shapes_buffer)
-	//{
-	//	
-	//}
+	
+	shapes_index_buffer[selector_box->getSelected() - 1]->render(*this->window);
 
 	this->selector_box->render(*this->window);
 

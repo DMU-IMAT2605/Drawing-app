@@ -16,7 +16,7 @@ private:
 	Shape* shape;
 
 	std::vector<Shape*> shapes_buffer;
-	//std::vector<Shape*> shapes_idnex_buffer;
+	std::vector<Shape*> shapes_index_buffer;
 
 	sf::Clock t_shapes_spawn;
 
