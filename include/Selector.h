@@ -5,6 +5,8 @@
 class Selector
 {
 private:
+	Shape* shape;
+
 	sf::RectangleShape selector_box;
 
 	sf::RectangleShape rect; //id: 1

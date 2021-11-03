@@ -15,6 +15,7 @@ private:
 	Selector* selector_box;	//test
 	Shape* shape;
 
+	int selection_buffer[2];
 	std::vector<Shape*> shapes_buffer;
 	std::vector<Shape*> shapes_index_buffer;
 
@@ -24,7 +25,7 @@ private:
 	void initWindow();
 	void initShape();
 
-	void indexShape();
+	void mouseTracker();
 
 	void shapeBufferHandler();
 

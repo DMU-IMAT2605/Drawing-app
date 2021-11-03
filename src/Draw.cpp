@@ -53,9 +53,12 @@ void Draw::initShape()
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
+
+	selection_buffer[0] = 1;
+
 }
 
-void Draw::indexShape()
+void Draw::mouseTracker()
 {
 	shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
 }
@@ -124,28 +127,47 @@ void Draw::updateInput(sf::Event _e)
 
 		if (this->mouse->isButtonPressed(sf::Mouse::Left))
 		{
+			selection_buffer[1] = selection_buffer[0];
+			selection_buffer[0] = selector_box->getSelected();
+
 			if (this->t_shapes_spawn.getElapsedTime().asSeconds() >= 0.1f)
 			{
 				switch (selector_box->getSelected())
 				{
 				case 1:
 					this->shapes_buffer.push_back(new Square(mouse->getPosition(*window), shape->getSize()));
-					std::cout << "rectangle\n"; // test
 					break;
+
 				case 2:
-					this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));	
-					std::cout << "circle\n";
+					this->shapes_buffer.push_back(new Circle(mouse->getPosition(*window), shape->getSize()));
 					break;
+
 				case 3:
 					std::cout << "triangle\n";
 					break;
+
 				case 4:
 					std::cout << "line\n";
 					break;
+
 				default:
 					break;
 				}
+				
 				this->t_shapes_spawn.restart();
+			}
+		}
+	}
+	else 
+	{
+
+		if (this->mouse->isButtonPressed(sf::Mouse::Left))
+		{
+			selection_buffer[1] = selection_buffer[0];
+			selection_buffer[0] = selector_box->getSelected();
+			if (selection_buffer[0] != selection_buffer[1]) {
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
+				this->shape->changeSize(sf::Vector2f(30, 30));
 			}
 		}
 	}
@@ -156,7 +178,7 @@ void Draw::update()
 {
 	this->updatePollEvents();
 	this->shapeBufferHandler();
-	this->indexShape();
+	this->mouseTracker();
 	
 }
 
