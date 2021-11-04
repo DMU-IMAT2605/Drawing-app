@@ -34,9 +34,9 @@ Lab Book 1 (33 %) :
 • a triangle	/check
 • an octagon	/check
 • a hexagon		/check
-• an arc		/
-• a line		/
-• a dot			/
+• an arc		/check
+• a line		/check
+• a dot			/check
 The drawing should be performed by a sf::Vertex array.You should submit a UML
 diagram of your class / classes and a screen shot of your software demonstrating the
 shapes which can be drawn.No software needs to be submitted, however it should

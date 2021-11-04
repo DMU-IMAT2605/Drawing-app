@@ -24,6 +24,11 @@ Draw::~Draw()
 	{
 		delete i;
 	}
+
+	for (auto& i : this->brush_buffer)
+	{
+		delete i;
+	}
 }
 
 void Draw::initWindow()
@@ -56,9 +61,10 @@ void Draw::initShape()
 	shapes_index_buffer.push_back(new Octagon(mouse->getPosition(*window)));	//id: 4
 	shapes_index_buffer.push_back(new Hexagon(mouse->getPosition(*window)));	//id: 5	
 	shapes_index_buffer.push_back(new Arc(mouse->getPosition(*window)));		//id: 6
-	shapes_index_buffer.push_back(new Line());//id: 7
-	shapes_index_buffer.push_back(new Line);//id: 8
-	//TODO: Implement rest of the shapes + commenting + uml						
+	shapes_index_buffer.push_back(new Line());									//id: 7
+	shapes_index_buffer.push_back(new Brush(mouse->getPosition(*window)));		//id: 8
+	
+	//TODO: commenting + uml						
 
 	selection_buffer[0] = 1;
 
@@ -66,8 +72,7 @@ void Draw::initShape()
 
 void Draw::mouseTracker()
 {
-	if (this->selector_box->getSelected() - 1 < 7)
-		shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
+	shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
 }
 
 void Draw::run()
@@ -84,6 +89,11 @@ void Draw::shapeBufferHandler()
 	if (this->shapes_buffer.size() > 1000)
 	{
 		this->shapes_buffer.erase(this->shapes_buffer.begin());
+	}
+
+	if (this->brush_buffer.size() > 3000)
+	{
+		this->brush_buffer.erase(this->brush_buffer.begin());
 	}
 }
 
@@ -105,25 +115,31 @@ void Draw::updateInput(sf::Event _e)
 
 	this->selector_box->update_input(*this->mouse, *this->window);
 
-	if (selector_box->contains(mouse->getPosition(*window)) == 0)
+	if (!selector_box->contains(mouse->getPosition(*window)))
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && selector_box->getSelected() - 1 < 7)
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && selector_box->getSelected() - 1 != 7)
 		{
-			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
+			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
 			this->shape->changeSize(sf::Vector2f(30, 30));
 		}
 
-		if (_e.type == sf::Event::MouseWheelMoved && selector_box->getSelected() - 1 < 7)
+		if (_e.type == sf::Event::MouseWheelMoved && selector_box->getSelected() - 1 != 7)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
-				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, 0));
-				this->shape->changeSize(sf::Vector2f(delta, 0));
+				if (selector_box->getSelected() - 1 != 8)
+				{
+					this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(delta, 0));
+					this->shape->changeSize(sf::Vector2f(delta, 0));
+				}
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 			{
-				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(0, delta));
-				this->shape->changeSize(sf::Vector2f(0, delta));
+				if (selector_box->getSelected() - 1 != 8)
+				{
+					this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(0, delta));
+					this->shape->changeSize(sf::Vector2f(0, delta));
+				}
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 			{
@@ -166,23 +182,24 @@ void Draw::updateInput(sf::Event _e)
 					break;
 
 				case 7: 
-					
 					if (!f_click_registered) 
 					{
 						p1 = sf::Vector2f(mouse->getPosition(*window));
 						this->f_click_registered = true;
 					}
-
-					break;
-				case 8:
 					break;
 
+				case 8 :
+					break;
 				default:
 					break;
 				}
-				
 				this->t_shapes_spawn.restart();
 			}
+
+			if (this->selector_box->getSelected() == 8)
+				this->brush_buffer.push_back(new Brush(mouse->getPosition(*window)));
+		
 		}
 
 		if (this->selector_box->getSelected() == 7 && !mouse->isButtonPressed(sf::Mouse::Left))
@@ -202,12 +219,13 @@ void Draw::updateInput(sf::Event _e)
 		{
 			selection_buffer[1] = selection_buffer[0];
 			selection_buffer[0] = selector_box->getSelected();
+
 			if (selection_buffer[0] != selection_buffer[1]) {
-				if (!selector_box->getSelected() - 1 < 7)
+				if (selector_box->getSelected() - 1 == 7)
 					return;
 
 				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
-				this->shape->changeSize(sf::Vector2f(30, 30));
+				this->shape->changeSize(DEFAULT_SIZE);
 			}
 		}
 	}
@@ -228,6 +246,11 @@ void Draw::render()
 	for (auto&& Shapes : shapes_buffer)
 	{
 		Shapes->render(*this->window);
+	}
+
+	for (auto&& Brush : brush_buffer)
+	{
+		Brush->render(*this->window);
 	}
 	
 	shapes_index_buffer[selector_box->getSelected() - 1]->render(*this->window);

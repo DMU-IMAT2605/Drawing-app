@@ -8,6 +8,7 @@
 #include "Hexagon.h"
 #include "Arc.h"
 #include "Line.h"
+#include "Brush.h"
 
 class Selector
 {

@@ -13,14 +13,10 @@ Line::~Line()
 }
 
 void Line::setPosition(sf::Vector2i _pos)
-{
-	this->vxr[0] = sf::Vector2f(_pos);
-}
+{}
 
 void Line::changeSize(sf::Vector2f _delta)
-{
-	this->vxr[1] = _delta;
-}
+{}
 
 void Line::render(sf::RenderTarget& _t)
 {
