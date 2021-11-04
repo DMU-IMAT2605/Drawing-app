@@ -18,6 +18,9 @@ private:
 
 	sf::Clock t_shapes_spawn;
 
+	bool f_click_registered = false;
+	sf::Vector2f p1, p2;
+
 	// Funcs - PR
 	void initWindow();
 	void initShape();

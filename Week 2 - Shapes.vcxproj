@@ -153,6 +153,7 @@
     <ClInclude Include="include\Square.h" />
     <ClInclude Include="include\Triangle.h" />
     <ClInclude Include="include\Octagon.h" />
+    <ClInclude Include="include\Line.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\LAB_BOOK_1\v16\Browse.VC.db" />
@@ -160,6 +161,7 @@
     <None Include=".vs\slnx.sqlite" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Line.cpp" />
     <ClCompile Include="src\Arc.cpp" />
     <ClCompile Include="src\Hexagon.cpp" />
     <ClCompile Include="src\Octagon.cpp" />

@@ -13,7 +13,7 @@ Draw::~Draw()
 	delete this->window;
 	delete this->mouse;
 	delete this->shape;
-	delete this->selector_box;	//test
+	delete this->selector_box;	
 
 	for (auto& i : this->shapes_index_buffer)
 	{
@@ -56,6 +56,8 @@ void Draw::initShape()
 	shapes_index_buffer.push_back(new Octagon(mouse->getPosition(*window)));	//id: 4
 	shapes_index_buffer.push_back(new Hexagon(mouse->getPosition(*window)));	//id: 5	
 	shapes_index_buffer.push_back(new Arc(mouse->getPosition(*window)));		//id: 6
+	shapes_index_buffer.push_back(new Line());//id: 7
+	shapes_index_buffer.push_back(new Line);//id: 8
 	//TODO: Implement rest of the shapes + commenting + uml						
 
 	selection_buffer[0] = 1;
@@ -64,7 +66,8 @@ void Draw::initShape()
 
 void Draw::mouseTracker()
 {
-	shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
+	if (this->selector_box->getSelected() - 1 < 7)
+		shapes_index_buffer[selector_box->getSelected() - 1]->setPosition(mouse->getPosition(*window));
 }
 
 void Draw::run()
@@ -104,13 +107,13 @@ void Draw::updateInput(sf::Event _e)
 
 	if (selector_box->contains(mouse->getPosition(*window)) == 0)
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && selector_box->getSelected() - 1 < 7)
 		{
 			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
 			this->shape->changeSize(sf::Vector2f(30, 30));
 		}
 
-		if (_e.type == sf::Event::MouseWheelMoved)
+		if (_e.type == sf::Event::MouseWheelMoved && selector_box->getSelected() - 1 < 7)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
@@ -162,6 +165,18 @@ void Draw::updateInput(sf::Event _e)
 					this->shapes_buffer.push_back(new Arc(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
+				case 7: 
+					
+					if (!f_click_registered) 
+					{
+						p1 = sf::Vector2f(mouse->getPosition(*window));
+						this->f_click_registered = true;
+					}
+
+					break;
+				case 8:
+					break;
+
 				default:
 					break;
 				}
@@ -169,6 +184,16 @@ void Draw::updateInput(sf::Event _e)
 				this->t_shapes_spawn.restart();
 			}
 		}
+
+		if (this->selector_box->getSelected() == 7 && !mouse->isButtonPressed(sf::Mouse::Left))
+		{
+			if (this->f_click_registered)
+			{
+				this->shapes_buffer.push_back(new Line(p1, sf::Vector2f(mouse->getPosition(*window))));
+				this->f_click_registered = false;
+			}
+		}
+
 	}
 	else 
 	{
@@ -178,12 +203,14 @@ void Draw::updateInput(sf::Event _e)
 			selection_buffer[1] = selection_buffer[0];
 			selection_buffer[0] = selector_box->getSelected();
 			if (selection_buffer[0] != selection_buffer[1]) {
+				if (!selector_box->getSelected() - 1 < 7)
+					return;
+
 				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
 				this->shape->changeSize(sf::Vector2f(30, 30));
 			}
 		}
 	}
-	
 }
 
 void Draw::update()

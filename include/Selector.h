@@ -7,6 +7,7 @@
 #include "Octagon.h"
 #include "Hexagon.h"
 #include "Arc.h"
+#include "Line.h"
 
 class Selector
 {
