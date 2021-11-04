@@ -10,10 +10,15 @@ class Selector
 private:
 	sf::RectangleShape selector_box;
 
-	sf::RectangleShape rect; //id: 1
-	sf::CircleShape circle;	//id: 2
+	sf::RectangleShape rect;	//id: 1
+	sf::CircleShape circle;		//id: 2
 	sf::ConvexShape triangle;	//id: 3
-	sf::RectangleShape line, line_box;	//id::4
+	sf::ConvexShape octagon;	//id: 4
+	sf::ConvexShape hexagon;	//id: 5
+	sf::ConvexShape arc;		//id: 6
+	sf::RectangleShape line;	//id::7
+	sf::RectangleShape line_box;	
+	sf::CircleShape dot;		//id: 8
 
 	int selected_shape = 1;
 

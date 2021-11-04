@@ -4,8 +4,8 @@
 #include <SFML/Graphics.hpp>
 
 #define PI 3.14159265
-#define RESOLUTION 360
-#define RAD (PI/60)
+#define RESOLUTION 120
+#define THETA (PI/60)
 #define DEFAULT_SIZE sf::Vector2f(30, 30)
 
 

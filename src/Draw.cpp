@@ -31,6 +31,7 @@ void Draw::initWindow()
 	// INITIAL VALUES
 	std::string title = "Shapes";
 	sf::VideoMode window_bounds(1600, 1000);
+	sf::ContextSettings settings; settings.antialiasingLevel = 8;
 	unsigned framerate_limit = 144;
 	bool veritical_sync_enabled = false;
 	// // // // // //
@@ -38,7 +39,7 @@ void Draw::initWindow()
 
 	this->window = new sf::RenderWindow(window_bounds,
 		title, sf::Style::Titlebar
-		| sf::Style::Close);
+		| sf::Style::Close, settings);
 
 	this->window->setPosition(sf::Vector2i(500, 200));
 
@@ -51,8 +52,9 @@ void Draw::initShape()
 	this->shape = new Square(mouse->getPosition(*window));	
 	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	//test
+	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
+	//TODO: Implement rest of the shapes + commenting + uml
 
 	selection_buffer[0] = 1;
 
@@ -147,7 +149,7 @@ void Draw::updateInput(sf::Event _e)
 					break;
 
 				case 4:
-					std::cout << "line\n";
+					
 					break;
 
 				default:
