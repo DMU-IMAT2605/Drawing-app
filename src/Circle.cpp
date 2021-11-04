@@ -7,7 +7,7 @@ Circle::Circle(sf::Vector2i _pos)
 
 	for (size_t i = 0; i < RESOLUTION; i++)
 	{
-		this->vxr[i] = sf::Vector2f(_pos.x + cos(THETA * i) * def_size.x, _pos.y + sin(THETA * i) * def_size.y);
+		this->vxr[i] = sf::Vector2f(_pos.x + cos(THETA * i) * shape_size.x, _pos.y + sin(THETA * i) * shape_size.y);
 	}
 
 	this->vxr[RESOLUTION - 1] = vxr[0];
@@ -38,22 +38,22 @@ Circle::~Circle()
 
 void Circle::changeSize(sf::Vector2f _delta)
 {
-	if ((this->def_size.y == 1 && _delta.y < 0) || (this->def_size.x == 1 && _delta.x < 0))
+	if ((this->shape_size.y == 1 && _delta.y < 0) || (this->shape_size.x == 1 && _delta.x < 0))
 		return;
 	if (_delta == sf::Vector2f(30, 30))
 	{
-		def_size = _delta;
+		shape_size = _delta;
 		return;
 	}
 
-	this->def_size += _delta;
+	this->shape_size += _delta;
 }
 
 void Circle::setPosition(sf::Vector2i _pos)
 {
 	for (size_t i = 0; i < RESOLUTION; i++)
 	{
-		this->vxr[i] = sf::Vector2f(_pos.x + cos(THETA * i) * def_size.x, _pos.y + sin(THETA * i) * def_size.y);
+		this->vxr[i] = sf::Vector2f(_pos.x + cos(THETA * i) * shape_size.x, _pos.y + sin(THETA * i) * shape_size.y);
 	}
 
 	this->vxr[RESOLUTION - 1] = vxr[0];

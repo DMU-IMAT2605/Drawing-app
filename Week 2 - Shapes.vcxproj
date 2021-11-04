@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Arc.h" />
     <ClInclude Include="include\Hexagon.h" />
     <ClInclude Include="include\Circle.h" />
     <ClInclude Include="include\Draw.h" />
@@ -159,6 +160,7 @@
     <None Include=".vs\slnx.sqlite" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Arc.cpp" />
     <ClCompile Include="src\Hexagon.cpp" />
     <ClCompile Include="src\Octagon.cpp" />
     <ClCompile Include="src\Square.cpp" />

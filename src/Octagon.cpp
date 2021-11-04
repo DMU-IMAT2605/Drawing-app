@@ -8,7 +8,7 @@ Octagon::Octagon(sf::Vector2i _pos)
 
 	for (size_t i = 0; i < vxr.getVertexCount(); i++)
 	{
-		this->vxr[i] = sf::Vector2f(_pos.x + cos((PI / 4) * i) * def_size.x, _pos.y + sin((PI / 4) * i) * def_size.y);
+		this->vxr[i] = sf::Vector2f(_pos.x + cos((PI / 4) * i) * shape_size.x, _pos.y + sin((PI / 4) * i) * shape_size.y);
 	}
 
 	this->vxr[vxr.getVertexCount() - 1] = vxr[0];
@@ -39,22 +39,22 @@ Octagon::~Octagon()
 
 void Octagon::changeSize(sf::Vector2f _delta)
 {
-	if ((this->def_size.y == 1 && _delta.y < 0) || (this->def_size.x == 1 && _delta.x < 0))
+	if ((this->shape_size.y == 1 && _delta.y < 0) || (this->shape_size.x == 1 && _delta.x < 0))
 		return;
 	if (_delta == sf::Vector2f(30, 30))
 	{
-		def_size = _delta;
+		shape_size = _delta;
 		return;
 	}
 
-	this->def_size += _delta;
+	this->shape_size += _delta;
 }
 
 void Octagon::setPosition(sf::Vector2i _pos)
 {
 	for (size_t i = 0; i < vxr.getVertexCount(); i++)
 	{
-		this->vxr[i] = sf::Vector2f(_pos.x + cos((PI / 4) * i) * def_size.x, _pos.y + sin((PI / 4) * i) * def_size.y);
+		this->vxr[i] = sf::Vector2f(_pos.x + cos((PI / 4) * i) * shape_size.x, _pos.y + sin((PI / 4) * i) * shape_size.y);
 	}
 
 	this->vxr[vxr.getVertexCount() - 1] = vxr[0];

@@ -15,12 +15,12 @@ Draw::~Draw()
 	delete this->shape;
 	delete this->selector_box;	//test
 
-	for (auto& i : this->shapes_buffer)
+	for (auto& i : this->shapes_index_buffer)
 	{
 		delete i;
 	}
 
-	for (auto& i : this->shapes_index_buffer)
+	for (auto& i : this->shapes_buffer)
 	{
 		delete i;
 	}
@@ -50,12 +50,13 @@ void Draw::initWindow()
 void Draw::initShape()
 {
 	this->shape = new Square(mouse->getPosition(*window));	
-	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));
-	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
-	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	
-	shapes_index_buffer.push_back(new Octagon(mouse->getPosition(*window)));
-	shapes_index_buffer.push_back(new Hexagon(mouse->getPosition(*window)));	
-	//TODO: Implement rest of the shapes + commenting + uml
+	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));		//id: 1
+	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));		//id: 2
+	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	//id: 3	
+	shapes_index_buffer.push_back(new Octagon(mouse->getPosition(*window)));	//id: 4
+	shapes_index_buffer.push_back(new Hexagon(mouse->getPosition(*window)));	//id: 5	
+	shapes_index_buffer.push_back(new Arc(mouse->getPosition(*window)));		//id: 6
+	//TODO: Implement rest of the shapes + commenting + uml						
 
 	selection_buffer[0] = 1;
 
@@ -155,6 +156,10 @@ void Draw::updateInput(sf::Event _e)
 
 				case 5:
 					this->shapes_buffer.push_back(new Hexagon(mouse->getPosition(*window), this->shape->getSize()));
+					break;
+
+				case 6:
+					this->shapes_buffer.push_back(new Arc(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
 				default:

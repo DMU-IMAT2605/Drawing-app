@@ -5,9 +5,9 @@ Triangle::Triangle(sf::Vector2i _pos)
 	this->vxr.resize(4);
 	this->vxr.setPrimitiveType(sf::LinesStrip);
 
-	this->vxr[0] = sf::Vector2f(_pos.x, _pos.y - def_size.y);
-	this->vxr[1] = sf::Vector2f(_pos.x + def_size.x, _pos.y + def_size.y);
-	this->vxr[2] = sf::Vector2f(_pos.x - def_size.x, _pos.y + def_size.y);
+	this->vxr[0] = sf::Vector2f(_pos.x, _pos.y - shape_size.y);
+	this->vxr[1] = sf::Vector2f(_pos.x + shape_size.x, _pos.y + shape_size.y);
+	this->vxr[2] = sf::Vector2f(_pos.x - shape_size.x, _pos.y + shape_size.y);
 	this->vxr[3] = vxr[0];
 }
 
@@ -27,22 +27,22 @@ Triangle::~Triangle()
 
 void Triangle::changeSize(sf::Vector2f _delta)
 {
-	if ((this->def_size.y == 1 && _delta.y < 0) || (this->def_size.x == 1 && _delta.x < 0))
+	if ((this->shape_size.y == 1 && _delta.y < 0) || (this->shape_size.x == 1 && _delta.x < 0))
 		return;
 	if (_delta == sf::Vector2f(30, 30))
 	{
-		def_size = _delta;
+		shape_size = _delta;
 		return;
 	}
 
-	this->def_size += _delta;
+	this->shape_size += _delta;
 }
 
 void Triangle::setPosition(sf::Vector2i _pos)
 {
-	this->vxr[0] = sf::Vector2f(_pos.x, _pos.y - def_size.y);
-	this->vxr[1] = sf::Vector2f(_pos.x + def_size.x, _pos.y + def_size.y);
-	this->vxr[2] = sf::Vector2f(_pos.x - def_size.x, _pos.y + def_size.y);
+	this->vxr[0] = sf::Vector2f(_pos.x, _pos.y - shape_size.y);
+	this->vxr[1] = sf::Vector2f(_pos.x + shape_size.x, _pos.y + shape_size.y);
+	this->vxr[2] = sf::Vector2f(_pos.x - shape_size.x, _pos.y + shape_size.y);
 	this->vxr[3] = vxr[0];
 }
 
