@@ -144,12 +144,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Hexagon.h" />
     <ClInclude Include="include\Circle.h" />
     <ClInclude Include="include\Draw.h" />
     <ClInclude Include="include\Shape.h" />
     <ClInclude Include="include\Selector.h" />
     <ClInclude Include="include\Square.h" />
     <ClInclude Include="include\Triangle.h" />
+    <ClInclude Include="include\Octagon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\LAB_BOOK_1\v16\Browse.VC.db" />
@@ -157,6 +159,8 @@
     <None Include=".vs\slnx.sqlite" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Hexagon.cpp" />
+    <ClCompile Include="src\Octagon.cpp" />
     <ClCompile Include="src\Square.cpp" />
     <ClCompile Include="src\Selector.cpp" />
     <ClCompile Include="src\Circle.cpp" />

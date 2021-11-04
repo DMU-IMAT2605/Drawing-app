@@ -33,6 +33,12 @@
     <ClInclude Include="include\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Hexagon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Octagon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\ProjectSettings.json" />
@@ -59,6 +65,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hexagon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Octagon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

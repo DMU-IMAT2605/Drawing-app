@@ -42,14 +42,7 @@ void Selector::initVariables(sf::RenderWindow& _win)
 
 	//Octagon
 	octagon.setPointCount(8);
-	octagon.setPoint(0, sf::Vector2f(0.f, 13.3f));	
-	octagon.setPoint(1, sf::Vector2f(0.f, 26.7f));
-	octagon.setPoint(2, sf::Vector2f(13.3f, 40.f));
-	octagon.setPoint(3, sf::Vector2f(26.7f, 40.f));
-	octagon.setPoint(4, sf::Vector2f(40.f, 26.7f));
-	octagon.setPoint(5, sf::Vector2f(40.f, 13.3f));
-	octagon.setPoint(6, sf::Vector2f(26.7f, 0.f));
-	octagon.setPoint(7, sf::Vector2f(13.3f, 0.f));
+	octagon.setRadius(20);
 	octagon.setOutlineThickness(5.f);
 	octagon.setFillColor(sf::Color::Transparent);
 	octagon.setOutlineColor(sf::Color::White);
@@ -57,12 +50,7 @@ void Selector::initVariables(sf::RenderWindow& _win)
 
 	//Hexagon
 	hexagon.setPointCount(6);
-	hexagon.setPoint(0, sf::Vector2f(20.f, 0.f));
-	hexagon.setPoint(1, sf::Vector2f(40.f, 11.3f));
-	hexagon.setPoint(2, sf::Vector2f(40.f, 28.7f));
-	hexagon.setPoint(3, sf::Vector2f(20.f, 40.f));
-	hexagon.setPoint(4, sf::Vector2f(0.f, 28.7f));
-	hexagon.setPoint(5, sf::Vector2f(0.f, 11.3f));
+	hexagon.setRadius(20);
 	hexagon.setOutlineThickness(5.f);
 	hexagon.setFillColor(sf::Color::Transparent);
 	hexagon.setOutlineColor(sf::Color::White);
@@ -87,7 +75,8 @@ void Selector::initVariables(sf::RenderWindow& _win)
 	line.setOutlineThickness(2.5f);
 	line.setFillColor(sf::Color::White);
 	line.setOutlineColor(sf::Color::White);
-	line.setPosition(sf::Vector2f(_win.getSize().x - 12.f, 465.f)); line_box.setPosition(sf::Vector2f(_win.getSize().x - 52.f, 450.f));
+	line.setPosition(sf::Vector2f(_win.getSize().x - 12.f, 465.f)); \
+	line_box.setPosition(sf::Vector2f(_win.getSize().x - 52.f, 445.f));
 	
 	//Dot
 	dot.setRadius(3.f);

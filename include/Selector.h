@@ -4,20 +4,22 @@
 #include "Circle.h"
 #include "Square.h"
 #include "Triangle.h"
+#include "Octagon.h"
+#include "Hexagon.h"
 
 class Selector
 {
 private:
 	sf::RectangleShape selector_box;
+	sf::RectangleShape line_box;	
 
 	sf::RectangleShape rect;	//id: 1
 	sf::CircleShape circle;		//id: 2
 	sf::ConvexShape triangle;	//id: 3
-	sf::ConvexShape octagon;	//id: 4
-	sf::ConvexShape hexagon;	//id: 5
+	sf::CircleShape octagon;	//id: 4
+	sf::CircleShape hexagon;	//id: 5
 	sf::ConvexShape arc;		//id: 6
 	sf::RectangleShape line;	//id::7
-	sf::RectangleShape line_box;	
 	sf::CircleShape dot;		//id: 8
 
 	int selected_shape = 1;

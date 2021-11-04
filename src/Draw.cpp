@@ -53,7 +53,8 @@ void Draw::initShape()
 	shapes_index_buffer.push_back(new Square(mouse->getPosition(*window)));
 	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));
 	shapes_index_buffer.push_back(new Triangle(mouse->getPosition(*window)));	
-	shapes_index_buffer.push_back(new Circle(mouse->getPosition(*window)));	//test
+	shapes_index_buffer.push_back(new Octagon(mouse->getPosition(*window)));
+	shapes_index_buffer.push_back(new Hexagon(mouse->getPosition(*window)));	
 	//TODO: Implement rest of the shapes + commenting + uml
 
 	selection_buffer[0] = 1;
@@ -149,7 +150,11 @@ void Draw::updateInput(sf::Event _e)
 					break;
 
 				case 4:
-					
+					this->shapes_buffer.push_back(new Octagon(mouse->getPosition(*window), this->shape->getSize()));
+					break;
+
+				case 5:
+					this->shapes_buffer.push_back(new Hexagon(mouse->getPosition(*window), this->shape->getSize()));
 					break;
 
 				default:
