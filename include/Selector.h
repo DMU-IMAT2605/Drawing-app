@@ -23,7 +23,7 @@ private:
 	sf::CircleShape hexagon;	//id: 5
 	sf::ConvexShape arc;		//id: 6
 	sf::RectangleShape line;	//id::7
-	sf::CircleShape dot;		//id: 8
+	sf::CircleShape brush;		//id: 8
 
 	int selected_shape = 1;
 

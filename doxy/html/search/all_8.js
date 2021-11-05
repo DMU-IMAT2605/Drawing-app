@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['octagon_0',['Octagon',['../class_octagon.html',1,'Octagon'],['../class_octagon.html#ab2966b146d8786aba27814ac0db2cac1',1,'Octagon::Octagon(sf::Vector2i _pos)'],['../class_octagon.html#a85e5427de5813301ce03a32f38bdba25',1,'Octagon::Octagon(sf::Vector2i _pos, sf::Vector2f _size)']]],
-  ['octagon_2ecpp_1',['Octagon.cpp',['../_octagon_8cpp.html',1,'']]],
-  ['octagon_2eh_2',['Octagon.h',['../_octagon_8h.html',1,'']]]
+  ['line_0',['Line',['../class_line.html',1,'']]],
+  ['line_1',['line',['../class_selector.html#ade165c90931c1e9e4d7616402df274cb',1,'Selector']]],
+  ['line_2',['Line',['../class_line.html#acc11b8a429d8cdd63ba6803dff5602b3',1,'Line::Line()'],['../class_line.html#a9110e5ae80a06bf126ff3df3eab8f0db',1,'Line::Line(sf::Vector2f _x, sf::Vector2f _y)']]],
+  ['line_2ecpp_3',['Line.cpp',['../_line_8cpp.html',1,'']]],
+  ['line_2eh_4',['Line.h',['../_line_8h.html',1,'']]],
+  ['line_5fbox_5',['line_box',['../class_selector.html#a5db08522e64201aa59c53400c8bb3eb2',1,'Selector']]]
 ];

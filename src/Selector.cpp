@@ -80,11 +80,11 @@ void Selector::initVariables(sf::RenderWindow& _win)
 	line_box.setPosition(sf::Vector2f(_win.getSize().x - 52.f, 445.f));
 	
 	//Dot
-	dot.setRadius(3.f);
-	dot.setOutlineThickness(5.f);
-	dot.setFillColor(sf::Color::White);
-	dot.setOutlineColor(sf::Color::White);
-	dot.setPosition(sf::Vector2f(_win.getSize().x - 34.f, 500.f));
+	brush.setRadius(3.f);
+	brush.setOutlineThickness(5.f);
+	brush.setFillColor(sf::Color::White);
+	brush.setOutlineColor(sf::Color::White);
+	brush.setPosition(sf::Vector2f(_win.getSize().x - 34.f, 500.f));
 
 	//Selector box
 	selector_box.setSize(sf::Vector2f(60.f, 436.f));
@@ -185,21 +185,21 @@ void Selector::updateInput(sf::Mouse& _mouse, sf::RenderWindow& _window)
 		line.setOutlineColor(sf::Color::White);
 	}
 
-	if (dot.getGlobalBounds().contains(mouse_pos) && selected_shape != 8) {	//dot
-		dot.setOutlineColor(sf::Color::Red);
-		dot.setFillColor(sf::Color::Red);
+	if (brush.getGlobalBounds().contains(mouse_pos) && selected_shape != 8) {	//dot
+		brush.setOutlineColor(sf::Color::Red);
+		brush.setFillColor(sf::Color::Red);
 
 		if (_mouse.isButtonPressed(sf::Mouse::Left))
 		{
 			selected_shape = 8;
-			dot.setFillColor(sf::Color::Green);
-			dot.setOutlineColor(sf::Color::Green);
+			brush.setFillColor(sf::Color::Green);
+			brush.setOutlineColor(sf::Color::Green);
 		}
 	}
 	else if (selected_shape != 8)
 	{
-		dot.setFillColor(sf::Color::White);
-		dot.setOutlineColor(sf::Color::White);
+		brush.setFillColor(sf::Color::White);
+		brush.setOutlineColor(sf::Color::White);
 	}
 }
 
@@ -222,7 +222,7 @@ void Selector::render(sf::RenderTarget& _target)
 	_target.draw(this->hexagon);
 	_target.draw(this->arc);
 	_target.draw(this->line);
-	_target.draw(this->dot);
+	_target.draw(this->brush);
 }
 
 

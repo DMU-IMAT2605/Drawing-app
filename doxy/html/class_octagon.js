@@ -5,5 +5,6 @@ var class_octagon =
     [ "~Octagon", "class_octagon.html#a3df1f8477e7bfc1dfbe34eece16509af", null ],
     [ "changeSize", "class_octagon.html#ad165bfc2626d472af1def112f946718a", null ],
     [ "render", "class_octagon.html#a3c6c6a87f892c404eaacad8af305253e", null ],
-    [ "setPosition", "class_octagon.html#a359c5daaafd8d899dd5e36e448014239", null ]
+    [ "setPosition", "class_octagon.html#a359c5daaafd8d899dd5e36e448014239", null ],
+    [ "vxr", "class_octagon.html#ac6891b453dc45c3a783bb1e5e0eb969d", null ]
 ];

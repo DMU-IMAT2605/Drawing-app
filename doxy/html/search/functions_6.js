@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['line_0',['Line',['../class_line.html#acc11b8a429d8cdd63ba6803dff5602b3',1,'Line::Line()'],['../class_line.html#a9110e5ae80a06bf126ff3df3eab8f0db',1,'Line::Line(sf::Vector2f _x, sf::Vector2f _y)']]]
+  ['initshape_0',['initShape',['../class_draw.html#abf5492ea135c95475afed711c2280787',1,'Draw']]],
+  ['initvariables_1',['initVariables',['../class_selector.html#a35f414726f9fa503f9618ebec5f4a5d0',1,'Selector']]],
+  ['initwindow_2',['initWindow',['../class_draw.html#af2041cecd9068d36b90f809183a78b34',1,'Draw']]]
 ];

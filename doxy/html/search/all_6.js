@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['line_0',['Line',['../class_line.html',1,'Line'],['../class_line.html#acc11b8a429d8cdd63ba6803dff5602b3',1,'Line::Line()'],['../class_line.html#a9110e5ae80a06bf126ff3df3eab8f0db',1,'Line::Line(sf::Vector2f _x, sf::Vector2f _y)']]],
-  ['line_2ecpp_1',['Line.cpp',['../_line_8cpp.html',1,'']]],
-  ['line_2eh_2',['Line.h',['../_line_8h.html',1,'']]]
+  ['hexagon_0',['Hexagon',['../class_hexagon.html',1,'']]],
+  ['hexagon_1',['hexagon',['../class_selector.html#a0f0b8fcdfbac173dfbd2fcbc68df8bcc',1,'Selector']]],
+  ['hexagon_2',['Hexagon',['../class_hexagon.html#a46ccfb625a3101a09552f4bff8fe7b20',1,'Hexagon::Hexagon(sf::Vector2i _pos)'],['../class_hexagon.html#a9da5f1147b0dd51ebb0c8db4fc46ace7',1,'Hexagon::Hexagon(sf::Vector2i _pos, sf::Vector2f _size)']]],
+  ['hexagon_2ecpp_3',['Hexagon.cpp',['../_hexagon_8cpp.html',1,'']]],
+  ['hexagon_2eh_4',['Hexagon.h',['../_hexagon_8h.html',1,'']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['initshape_0',['initShape',['../class_draw.html#abf5492ea135c95475afed711c2280787',1,'Draw']]],
+  ['initvariables_1',['initVariables',['../class_selector.html#a35f414726f9fa503f9618ebec5f4a5d0',1,'Selector']]],
+  ['initwindow_2',['initWindow',['../class_draw.html#af2041cecd9068d36b90f809183a78b34',1,'Draw']]]
 ];

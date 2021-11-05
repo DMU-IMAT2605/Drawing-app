@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['octagon_0',['Octagon',['../class_octagon.html#ab2966b146d8786aba27814ac0db2cac1',1,'Octagon::Octagon(sf::Vector2i _pos)'],['../class_octagon.html#a85e5427de5813301ce03a32f38bdba25',1,'Octagon::Octagon(sf::Vector2i _pos, sf::Vector2f _size)']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['mousetracker_1',['mouseTracker',['../class_draw.html#a81c6c4a9c5883ac11ac0f23aa7b64f83',1,'Draw']]]
 ];
