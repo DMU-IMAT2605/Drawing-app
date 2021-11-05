@@ -1,13 +1,11 @@
 #pragma once
-
-#include <Shape.h>
-
-class Circle: public Shape
+#include "Shape.h"
+class Hexagon : public Shape
 {
 public:
-	Circle(sf::Vector2i _pos);
-	Circle(sf::Vector2i _pos, sf::Vector2f _size);
-	~Circle();
+	Hexagon(sf::Vector2i _pos);
+	Hexagon(sf::Vector2i _pos, sf::Vector2f _size);
+	~Hexagon();
 
 	void changeSize(sf::Vector2f _delta);
 	void setPosition(sf::Vector2i _pos);
@@ -16,5 +14,4 @@ public:
 private:
 	sf::VertexArray vxr;
 };
-
 

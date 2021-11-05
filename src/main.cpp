@@ -24,3 +24,22 @@ int main() //!< Entry point for the application
 	//!< End of application			
 	return 0;
 }
+
+/*
+Lab Book 1 (33 %) :
+	You are to design a collection of one or more C++ classes capable of drawing the
+	following 2D shapes :
+• a square		/check
+• a circle		/check
+• a triangle	/check
+• an octagon	/check
+• a hexagon		/check
+• an arc		/check
+• a line		/check
+• a dot			/check
+The drawing should be performed by a sf::Vertex array.You should submit a UML
+diagram of your class / classes and a screen shot of your software demonstrating the
+shapes which can be drawn.No software needs to be submitted, however it should
+be available through the modules GIThub.
+*/
+

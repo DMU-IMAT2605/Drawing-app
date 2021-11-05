@@ -1,8 +1,6 @@
 #pragma once
-#pragma once
 
 #include "Selector.h"
-#include "Circle.h"
 
 class Draw
 
@@ -14,15 +12,21 @@ private:
 	Selector* selector_box;	//test
 	Shape* shape;
 
+	int selection_buffer[2];
 	std::vector<Shape*> shapes_buffer;
+	std::vector<Shape*>	brush_buffer;	
+	std::vector<Shape*> shapes_index_buffer;
 
 	sf::Clock t_shapes_spawn;
+
+	bool f_click_registered = false;
+	sf::Vector2f p1;
 
 	// Funcs - PR
 	void initWindow();
 	void initShape();
 
-	void shadowShape();
+	void mouseTracker();
 
 	void shapeBufferHandler();
 
@@ -36,8 +40,6 @@ public:
 	// Constr & Deconstr -
 	Draw();
 	virtual ~Draw();
-
-	// Vars - PB
 
 	// Funcs - PB
 	void run();

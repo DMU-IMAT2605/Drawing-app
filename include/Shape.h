@@ -3,6 +3,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#define PI 3.14159265
+#define RESOLUTION 121
+#define THETA (PI/60)
+#define DEFAULT_SIZE sf::Vector2f(30, 30)
+
+
 class Shape
 {
 public:
@@ -14,10 +20,10 @@ public:
 	virtual void setPosition(sf::Vector2i _pos) = 0;
 	virtual void render(sf::RenderTarget& _t) = 0;
 
-	sf::Vector2f getSize() { return this->size; };
+	sf::Vector2f getSize() { return this->shape_size; };
 	
 protected:
-	sf::Vector2f size = sf::Vector2f(30, 30);
+	sf::Vector2f shape_size = DEFAULT_SIZE;
 };
 
 

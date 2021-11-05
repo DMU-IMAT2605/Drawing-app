@@ -1,13 +1,11 @@
 #pragma once
-
-#include <Shape.h>
-
-class Circle: public Shape
+#include "Shape.h"
+class Octagon :	public Shape
 {
 public:
-	Circle(sf::Vector2i _pos);
-	Circle(sf::Vector2i _pos, sf::Vector2f _size);
-	~Circle();
+	Octagon(sf::Vector2i _pos);
+	Octagon(sf::Vector2i _pos, sf::Vector2f _size);
+	~Octagon();
 
 	void changeSize(sf::Vector2f _delta);
 	void setPosition(sf::Vector2i _pos);
@@ -16,5 +14,4 @@ public:
 private:
 	sf::VertexArray vxr;
 };
-
 

@@ -1,13 +1,11 @@
 #pragma once
-
-#include <Shape.h>
-
-class Circle: public Shape
+#include "Shape.h"
+class Arc : public Shape
 {
 public:
-	Circle(sf::Vector2i _pos);
-	Circle(sf::Vector2i _pos, sf::Vector2f _size);
-	~Circle();
+	Arc(sf::Vector2i _pos);
+	Arc(sf::Vector2i _pos, sf::Vector2f _size);
+	~Arc();
 
 	void changeSize(sf::Vector2f _delta);
 	void setPosition(sf::Vector2i _pos);
@@ -16,5 +14,4 @@ public:
 private:
 	sf::VertexArray vxr;
 };
-
 
