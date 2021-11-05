@@ -113,7 +113,7 @@ void Draw::updateInput(sf::Event _e)
 {	
 	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
 
-	this->selector_box->update_input(*this->mouse, *this->window);
+	this->selector_box->updateInput(*this->mouse, *this->window);
 
 	if (!selector_box->contains(mouse->getPosition(*window)))
 	{

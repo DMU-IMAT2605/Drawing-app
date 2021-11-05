@@ -34,7 +34,7 @@ public:
 	~Selector();
 	int getSelected();
 	bool contains(sf::Vector2i _mpos);
-	void update_input(sf::Mouse& _mouse, sf::RenderWindow& _window);
+	void updateInput(sf::Mouse& _mouse, sf::RenderWindow& _window);
 	void render(sf::RenderTarget& _target);
 };
 
