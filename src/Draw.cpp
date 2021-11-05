@@ -113,7 +113,7 @@ void Draw::updateInput(sf::Event _e)
 {	
 	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
 
-	this->selector_box->updateInput(*this->mouse, *this->window);
+	this->selector_box->update_input(*this->mouse, *this->window);
 
 	if (!selector_box->contains(mouse->getPosition(*window)))
 	{
@@ -184,7 +184,7 @@ void Draw::updateInput(sf::Event _e)
 				case 7: 
 					if (!f_click_registered) 
 					{
-						line_position_1 = sf::Vector2f(mouse->getPosition(*window));
+						p1 = sf::Vector2f(mouse->getPosition(*window));
 						this->f_click_registered = true;
 					}
 					break;
@@ -206,7 +206,7 @@ void Draw::updateInput(sf::Event _e)
 		{
 			if (this->f_click_registered)
 			{
-				this->shapes_buffer.push_back(new Line(line_position_1, sf::Vector2f(mouse->getPosition(*window))));
+				this->shapes_buffer.push_back(new Line(p1, sf::Vector2f(mouse->getPosition(*window))));
 				this->f_click_registered = false;
 			}
 		}
