@@ -41,8 +41,6 @@ public:
 	Draw();
 	virtual ~Draw();
 
-	// Vars - PB
-
 	// Funcs - PB
 	void run();
 };

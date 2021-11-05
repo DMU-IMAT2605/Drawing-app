@@ -54,7 +54,8 @@ void Selector::initVariables(sf::RenderWindow& _win)
 	hexagon.setOutlineThickness(5.f);
 	hexagon.setFillColor(sf::Color::Transparent);
 	hexagon.setOutlineColor(sf::Color::White);
-	hexagon.setPosition(sf::Vector2f(_win.getSize().x - 52.f, 340.f));
+	hexagon.setPosition(sf::Vector2f(_win.getSize().x - 12.f, 340.f));
+	hexagon.setRotation(90.f);
 
 	//Arc
 
@@ -93,7 +94,7 @@ void Selector::initVariables(sf::RenderWindow& _win)
 	selector_box.setPosition(sf::Vector2f(_win.getSize().x - 60.f, 90.f));
 }
 
-void Selector::update_input(sf::Mouse& _mouse, sf::RenderWindow& _window)
+void Selector::updateInput(sf::Mouse& _mouse, sf::RenderWindow& _window)
 {
 	sf::Vector2f mouse_pos = sf::Vector2f(_mouse.getPosition(_window));
 
