@@ -20,7 +20,7 @@ private:
 	sf::Clock t_shapes_spawn;
 
 	bool f_click_registered = false;
-	sf::Vector2f p1;
+	sf::Vector2f line_position_1;
 
 	// Funcs - PR
 	void initWindow();
@@ -37,13 +37,9 @@ private:
 	void render();
 
 public: 
-	// Constr & Deconstr -
 	Draw();
 	virtual ~Draw();
 
-	// Vars - PB
-
-	// Funcs - PB
 	void run();
 };
 
