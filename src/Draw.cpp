@@ -109,7 +109,7 @@ void Draw::updatePollEvents()
 	}
 }
 
-void Draw::updateInput(sf::Event _e)
+void Draw::updateInput(sf::Event& _e)
 {	
 	int delta = _e.mouseWheel.delta; //Less memory efficient but makes it easier to read the code. Fair trade IMHO
 
@@ -119,7 +119,7 @@ void Draw::updateInput(sf::Event _e)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && selector_box->getSelected() - 1 != 7)
 		{
-			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
+			this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30, 30));
 			this->shape->changeSize(sf::Vector2f(30, 30));
 		}
 
@@ -224,8 +224,8 @@ void Draw::updateInput(sf::Event _e)
 				if (selector_box->getSelected() - 1 == 7)
 					return;
 
-				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(DEFAULT_SIZE);
-				this->shape->changeSize(DEFAULT_SIZE);
+				this->shapes_index_buffer[selector_box->getSelected() - 1]->changeSize(sf::Vector2f(30,30));
+				this->shape->changeSize(sf::Vector2f(30, 30));
 			}
 		}
 	}
