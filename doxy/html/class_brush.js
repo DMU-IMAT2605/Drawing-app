@@ -6,5 +6,5 @@ var class_brush =
     [ "render", "class_brush.html#acdc92712f50ae395c77909d6ec7e3a88", null ],
     [ "setPosition", "class_brush.html#a05c23946cff3992dc92f30220ffa1f97", null ],
     [ "brush_size", "class_brush.html#ae9fcaac3e48d033f3860af349a8c0864", null ],
-    [ "vxr", "class_brush.html#abbbb2f0b153207692487b0a44b6a561f", null ]
+    [ "circle", "class_brush.html#a235f96228402762d36702d8d69c15a2f", null ]
 ];
