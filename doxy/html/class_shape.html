@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('class_shape.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
+<p>Virtual base class for geometrical shapes.  
+ <a href="class_shape.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_shape_8h_source.html">Shape.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Shape:</div>
@@ -121,24 +124,34 @@ Inheritance diagram for Shape:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa8d87171e65e0d8ba3c5459978992a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#aaa8d87171e65e0d8ba3c5459978992a7">Shape</a> ()</td></tr>
+<tr class="memdesc:aaa8d87171e65e0d8ba3c5459978992a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_shape.html#aaa8d87171e65e0d8ba3c5459978992a7">More...</a><br /></td></tr>
 <tr class="separator:aaa8d87171e65e0d8ba3c5459978992a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a935afc9e576015f967d90de56977167d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#a935afc9e576015f967d90de56977167d">~Shape</a> ()</td></tr>
+<tr class="memdesc:a935afc9e576015f967d90de56977167d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="class_shape.html#a935afc9e576015f967d90de56977167d">More...</a><br /></td></tr>
 <tr class="separator:a935afc9e576015f967d90de56977167d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478f0872bb321b53e8cfc3540d6bd224"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#a478f0872bb321b53e8cfc3540d6bd224">changeSize</a> (sf::Vector2f _delta)=0</td></tr>
+<tr class="memdesc:a478f0872bb321b53e8cfc3540d6bd224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes shape's size depending on input (<em>see also</em>).  <a href="class_shape.html#a478f0872bb321b53e8cfc3540d6bd224">More...</a><br /></td></tr>
 <tr class="separator:a478f0872bb321b53e8cfc3540d6bd224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7a46a371021988f984961d64e0867da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#aa7a46a371021988f984961d64e0867da">setPosition</a> (sf::Vector2i _pos)=0</td></tr>
+<tr class="memdesc:aa7a46a371021988f984961d64e0867da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets position for the shape indexator.  <a href="class_shape.html#aa7a46a371021988f984961d64e0867da">More...</a><br /></td></tr>
 <tr class="separator:aa7a46a371021988f984961d64e0867da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7318d0ce61112b0f7427b4a75f4d961"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#ac7318d0ce61112b0f7427b4a75f4d961">render</a> (sf::RenderTarget &amp;_t)=0</td></tr>
+<tr class="memdesc:ac7318d0ce61112b0f7427b4a75f4d961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders shape on screen.  <a href="class_shape.html#ac7318d0ce61112b0f7427b4a75f4d961">More...</a><br /></td></tr>
 <tr class="separator:ac7318d0ce61112b0f7427b4a75f4d961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c5088d40a36b6af54c2f5e69756b8e9"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#a6c5088d40a36b6af54c2f5e69756b8e9">getSize</a> ()</td></tr>
+<tr class="memdesc:a6c5088d40a36b6af54c2f5e69756b8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current size of a shape.  <a href="class_shape.html#a6c5088d40a36b6af54c2f5e69756b8e9">More...</a><br /></td></tr>
 <tr class="separator:a6c5088d40a36b6af54c2f5e69756b8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af34096d4febea6fcf22cb12ce5e2998c"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shape.html#af34096d4febea6fcf22cb12ce5e2998c">shape_size</a> = <a class="el" href="_shape_8h.html#a9771cabfd673a8e350f1f8ce0b8f458f">DEFAULT_SIZE</a></td></tr>
+<tr class="memdesc:af34096d4febea6fcf22cb12ce5e2998c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_shape.html" title="Virtual base class for geometrical shapes.">Shape</a> size initialized with the default value.  <a href="class_shape.html#af34096d4febea6fcf22cb12ce5e2998c">More...</a><br /></td></tr>
 <tr class="separator:af34096d4febea6fcf22cb12ce5e2998c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Virtual base class for geometrical shapes. </p>
+<p >Contains a template of functions that useful in handling any shapes available through this app. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaa8d87171e65e0d8ba3c5459978992a7" name="aaa8d87171e65e0d8ba3c5459978992a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa8d87171e65e0d8ba3c5459978992a7">&#9670;&nbsp;</a></span>Shape()</h2>
 
@@ -153,6 +166,11 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor. </p>
+<blockquote class="doxtable">
+<p ><em>empty</em> </p>
+</blockquote>
 
 </div>
 </div>
@@ -178,6 +196,11 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Virtual destructor. </p>
+<blockquote class="doxtable">
+<p ><em>empty</em> </p>
+</blockquote>
 
 </div>
 </div>
@@ -206,6 +229,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Changes shape's size depending on input (<em>see also</em>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_delta</td><td>is a two dimensional vector that gets mosuewheel input goes from -1 to 1 in both <b>X</b> &amp; <b>Y</b>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a href="../html/index.html" title="Link title"><em><b>User Manual</b></em></a> </dd></dl>
+
 <p>Implemented in <a class="el" href="class_arc.html#af128846e04ba159fb4135d5d55a8bc2c">Arc</a>, <a class="el" href="class_brush.html#a75fba41b4177ef4b7efbf10edc722b84">Brush</a>, <a class="el" href="class_circle.html#ac208abb21d477f3fbb094a382da1bc26">Circle</a>, <a class="el" href="class_hexagon.html#a8bee5bb925d0529be25c5326edd35f17">Hexagon</a>, <a class="el" href="class_line.html#ad0631ea05fb2e851e9b22652538d03a2">Line</a>, <a class="el" href="class_octagon.html#ad165bfc2626d472af1def112f946718a">Octagon</a>, <a class="el" href="class_square.html#abe390534ce5f2a6861eb4ecface4de70">Square</a>, and <a class="el" href="class_triangle.html#acfbc6139849f8e74b0e36d1c9f6ce04d">Triangle</a>.</p>
 
 </div>
@@ -233,6 +265,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets current size of a shape. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_shape.html#af34096d4febea6fcf22cb12ce5e2998c">shape_size</a></dd></dl>
+
 </div>
 </div>
 <a id="ac7318d0ce61112b0f7427b4a75f4d961" name="ac7318d0ce61112b0f7427b4a75f4d961"></a>
@@ -258,6 +293,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renders shape on screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&amp;_target</td><td>is a refrence to the <a class="el" href="">window</a></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_arc.html#a61626d23973b13a5ad29aab3e48c00ed">Arc</a>, <a class="el" href="class_brush.html#acdc92712f50ae395c77909d6ec7e3a88">Brush</a>, <a class="el" href="class_circle.html#a41846bfbd679e8dbd393c401a0903501">Circle</a>, <a class="el" href="class_hexagon.html#ae1def3c92f937fa980128976ed96a5f3">Hexagon</a>, <a class="el" href="class_line.html#aeea7466d2fe5f516063b7e3e8db62ec5">Line</a>, <a class="el" href="class_octagon.html#a3c6c6a87f892c404eaacad8af305253e">Octagon</a>, <a class="el" href="class_square.html#aea49c4d81fd76213e46fd5a5e4d87e1b">Square</a>, and <a class="el" href="class_triangle.html#a89f84ab2ef5de9f9a078c05bc6d45a2b">Triangle</a>.</p>
 
@@ -287,6 +330,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets position for the shape indexator. </p>
+<p >It isn't necesarily used to set shape's position as it's usually done by the constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pos</td><td>is mouse position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_arc.html#a0d7566fd038f20b3d88ad8656c0fb9bb">Arc</a>, <a class="el" href="class_brush.html#a05c23946cff3992dc92f30220ffa1f97">Brush</a>, <a class="el" href="class_circle.html#abd35d78b2e98fa789e28caeb36749df0">Circle</a>, <a class="el" href="class_hexagon.html#a196fbd63ca163fc71dcc409c0053e3ee">Hexagon</a>, <a class="el" href="class_line.html#a5eb500e5c90a4259eb07f4f382d778a5">Line</a>, <a class="el" href="class_octagon.html#a359c5daaafd8d899dd5e36e448014239">Octagon</a>, <a class="el" href="class_square.html#ad8ffec5469159e215cdc727c9967170e">Square</a>, and <a class="el" href="class_triangle.html#ae23676993502a9c177c6088b55507dd5">Triangle</a>.</p>
 
 </div>
@@ -311,6 +362,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_shape.html" title="Virtual base class for geometrical shapes.">Shape</a> size initialized with the default value. </p>
 
 </div>
 </div>

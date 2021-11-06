@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////
-///! \mainpage Drawing app  :  Version: 0.0.0.0
+///! \mainpage User Manual
 ///
 /// Hello World!
 /// -------------

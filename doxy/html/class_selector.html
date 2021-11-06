@@ -101,12 +101,15 @@ $(document).ready(function(){initNavTree('class_selector.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
+<p>Creates selector menu and input buttons.  
+ <a href="class_selector.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_selector_8h_source.html">Selector.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a007e97484449daf22925338bfa1369bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selector.html#a007e97484449daf22925338bfa1369bc">Selector</a> (sf::RenderWindow &amp;_win)</td></tr>
-<tr class="memdesc:a007e97484449daf22925338bfa1369bc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_selector.html">Selector</a> box constructor.  <a href="class_selector.html#a007e97484449daf22925338bfa1369bc">More...</a><br /></td></tr>
+<tr class="memdesc:a007e97484449daf22925338bfa1369bc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_selector.html" title="Creates selector menu and input buttons.">Selector</a> box constructor.  <a href="class_selector.html#a007e97484449daf22925338bfa1369bc">More...</a><br /></td></tr>
 <tr class="separator:a007e97484449daf22925338bfa1369bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee34f2ccef257f9f866047cfe9bc8fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selector.html#a4ee34f2ccef257f9f866047cfe9bc8fc">~Selector</a> ()</td></tr>
 <tr class="memdesc:a4ee34f2ccef257f9f866047cfe9bc8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_selector.html#a4ee34f2ccef257f9f866047cfe9bc8fc">More...</a><br /></td></tr>
@@ -118,8 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1e33e087f029562dc3e66de0c29e5ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells, whether mouse cursor is currently inside selector box.  <a href="class_selector.html#a1e33e087f029562dc3e66de0c29e5ae4">More...</a><br /></td></tr>
 <tr class="separator:a1e33e087f029562dc3e66de0c29e5ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1e5a4bb816bb9984c75406c705b9553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selector.html#ae1e5a4bb816bb9984c75406c705b9553">updateInput</a> (sf::Mouse &amp;_mouse, sf::RenderWindow &amp;_window)</td></tr>
+<tr class="memdesc:ae1e5a4bb816bb9984c75406c705b9553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets mouse position relative to the window and updates selected shape in case one of the buttons is pressed.  <a href="class_selector.html#ae1e5a4bb816bb9984c75406c705b9553">More...</a><br /></td></tr>
 <tr class="separator:ae1e5a4bb816bb9984c75406c705b9553"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683958088e269274bf26a6cdcd54686b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selector.html#a683958088e269274bf26a6cdcd54686b">render</a> (sf::RenderTarget &amp;_target)</td></tr>
+<tr class="memdesc:a683958088e269274bf26a6cdcd54686b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders selector box on screen.  <a href="class_selector.html#a683958088e269274bf26a6cdcd54686b">More...</a><br /></td></tr>
 <tr class="separator:a683958088e269274bf26a6cdcd54686b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -164,7 +169,10 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:ad2d6785fbeddfa492c991c8fb223e7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting shape pushed into buffer.  <a href="class_selector.html#ad2d6785fbeddfa492c991c8fb223e7a0">More...</a><br /></td></tr>
 <tr class="separator:ad2d6785fbeddfa492c991c8fb223e7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Creates selector menu and input buttons. </p>
+<p >This UI helps tracking previously used shapes, indicates currently selected shape and allows user input. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a007e97484449daf22925338bfa1369bc" name="a007e97484449daf22925338bfa1369bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a007e97484449daf22925338bfa1369bc">&#9670;&nbsp;</a></span>Selector()</h2>
 
@@ -181,10 +189,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_selector.html">Selector</a> box constructor. </p>
+<p><a class="el" href="class_selector.html" title="Creates selector menu and input buttons.">Selector</a> box constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">&amp;_win</td><td>is a refrence to the <a class="el" href="">window</a> in <a class="el" href="class_draw.html">Draw</a>. </td></tr>
+    <tr><td class="paramname">&amp;_win</td><td>is a refrence to the <a class="el" href="">window</a> in <a class="el" href="class_draw.html" title="Draws shapes and selector menu on the screen.">Draw</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -228,8 +236,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tells, whether mouse cursor is currently inside selector box. </p>
-<dl class="section return"><dt>Returns</dt><dd><br  />
- </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mpos</td><td>is a variable describing <a class="el" href="">mouse</a> position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool depending on <a class="el" href="">mouse</a> position relatively to the <a class="el" href="">window</a>. <blockquote class="doxtable">
+<p >Located inside <a class="el" href="class_selector.html#ae1e5a4bb816bb9984c75406c705b9553">updateInput()</a>. </p>
+</blockquote>
+</dd></dl>
 
 </div>
 </div>
@@ -249,7 +265,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets updated whenever shape button is pressed. </p>
-<dl class="section return"><dt>Returns</dt><dd>Selected <a class="el" href="class_shape.html">Shape</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Selected <a class="el" href="class_shape.html" title="Virtual base class for geometrical shapes.">Shape</a>. </dd></dl>
 
 </div>
 </div>
@@ -280,7 +296,7 @@ Private Attributes</h2></td></tr>
 <p>Initializes shapes buttons' settings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">&amp;_win</td><td>is a refrence to the <a class="el" href="">window</a> in <a class="el" href="class_draw.html">Draw</a>. </td></tr>
+    <tr><td class="paramname">&amp;_win</td><td>is a refrence to the <a class="el" href="">window</a> in <a class="el" href="class_draw.html" title="Draws shapes and selector menu on the screen.">Draw</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,6 +318,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Renders selector box on screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&amp;_target</td><td>is a refrence to the <a class="el" href="">window</a></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -330,6 +354,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets mouse position relative to the window and updates selected shape in case one of the buttons is pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mouse</td><td>is a refrence to an actual mouse object in <a class="el" href="class_draw.html" title="Draws shapes and selector menu on the screen.">Draw</a>. </td></tr>
+    <tr><td class="paramname">_window</td><td>is a refrence to an actual window object in <a class="el" href="class_draw.html" title="Draws shapes and selector menu on the screen.">Draw</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

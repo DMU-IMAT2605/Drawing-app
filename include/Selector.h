@@ -10,6 +10,10 @@
 #include "Line.h"
 #include "Brush.h"
 
+/// Creates selector menu and input buttons
+/// 
+/// This UI helps tracking previously used shapes, indicates currently selected shape and allows user input.
+
 class Selector
 {
 private:

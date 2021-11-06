@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Shapes", "index.html", [
-    [ "Drawing app  :  Version: 0.0.0.0", "index.html", [
+    [ "User Manual", "index.html", [
       [ "Guide:", "index.html#autotoc_md1", [
         [ "Hello World!", "index.html#autotoc_md0", null ],
         [ "In this app you will find 3 major classes:", "index.html#autotoc_md2", null ]

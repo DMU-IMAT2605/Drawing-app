@@ -2,8 +2,6 @@
 
 #include "Selector.h"
 
-/// <summary>
-///
 /// Draws shapes and selector menu on the screen
 /// 
 ///	Draw utilises all of the existing classes and has most of its functions labeled as private for a better security.
@@ -11,7 +9,7 @@
 /// Has a timer and initialization functions as well as updaters and render handler.
 /// 
 class Draw
-
+/// <summary>
 {
 private:
 	///Render Window object.
@@ -90,8 +88,8 @@ public:
 	virtual ~Draw();
 	/// Starts the update and render functions.
 	void run();
-};
 	/// </summary>
+};
 
 
 
