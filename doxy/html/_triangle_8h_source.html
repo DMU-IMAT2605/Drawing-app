@@ -96,31 +96,34 @@ $(document).ready(function(){initNavTree('_triangle_8h_source.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <a href="_triangle_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_shape_8h.html">Shape.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_triangle.html">    3</a></span><span class="keyword">class </span><a class="code hl_class" href="class_triangle.html">Triangle</a> :  <span class="keyword">public</span> <a class="code hl_class" href="class_shape.html">Shape</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_function" href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle</a>(sf::Vector2i _pos);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle</a>(sf::Vector2i _pos, sf::Vector2f _size);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">~Triangle</a>();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#acfbc6139849f8e74b0e36d1c9f6ce04d">changeSize</a>(sf::Vector2f _delta);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#ae23676993502a9c177c6088b55507dd5">setPosition</a>(sf::Vector2i _pos);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#a89f84ab2ef5de9f9a078c05bc6d45a2b">render</a>(sf::RenderTarget&amp; _t);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">   15</a></span>    sf::VertexArray <a class="code hl_variable" href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">vxr</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_shape_8h.html">Shape.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_triangle.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_triangle.html">Triangle</a> :  <span class="keyword">public</span> <a class="code hl_class" href="class_shape.html">Shape</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle</a>(sf::Vector2i _pos);    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle</a>(sf::Vector2i _pos, sf::Vector2f _size);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">~Triangle</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#acfbc6139849f8e74b0e36d1c9f6ce04d">changeSize</a>(sf::Vector2f _delta);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#ae23676993502a9c177c6088b55507dd5">setPosition</a>(sf::Vector2i _pos);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_triangle.html#a89f84ab2ef5de9f9a078c05bc6d45a2b">render</a>(sf::RenderTarget&amp; _t);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">   27</a></span>    sf::VertexArray <a class="code hl_variable" href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">vxr</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    </div>
 <div class="ttc" id="a_shape_8h_html"><div class="ttname"><a href="_shape_8h.html">Shape.h</a></div></div>
 <div class="ttc" id="aclass_shape_html"><div class="ttname"><a href="class_shape.html">Shape</a></div><div class="ttdoc">Virtual base class for geometrical shapes.</div><div class="ttdef"><b>Definition:</b> Shape.h:19</div></div>
-<div class="ttc" id="aclass_triangle_html"><div class="ttname"><a href="class_triangle.html">Triangle</a></div><div class="ttdef"><b>Definition:</b> Triangle.h:4</div></div>
-<div class="ttc" id="aclass_triangle_html_a50503de13004a29e7a452b0223c7f8ec"><div class="ttname"><a href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">Triangle::vxr</a></div><div class="ttdeci">sf::VertexArray vxr</div><div class="ttdef"><b>Definition:</b> Triangle.h:15</div></div>
-<div class="ttc" id="aclass_triangle_html_a5199760a17454f4dc94c855a57e3a152"><div class="ttname"><a href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">Triangle::~Triangle</a></div><div class="ttdeci">~Triangle()</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:25</div></div>
+<div class="ttc" id="aclass_triangle_html"><div class="ttname"><a href="class_triangle.html">Triangle</a></div><div class="ttdoc">This class draws an triangle.</div><div class="ttdef"><b>Definition:</b> Triangle.h:7</div></div>
+<div class="ttc" id="aclass_triangle_html_a50503de13004a29e7a452b0223c7f8ec"><div class="ttname"><a href="class_triangle.html#a50503de13004a29e7a452b0223c7f8ec">Triangle::vxr</a></div><div class="ttdeci">sf::VertexArray vxr</div><div class="ttdoc">An array that stores positions of all of the vertexes of a shape.</div><div class="ttdef"><b>Definition:</b> Triangle.h:27</div></div>
+<div class="ttc" id="aclass_triangle_html_a5199760a17454f4dc94c855a57e3a152"><div class="ttname"><a href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">Triangle::~Triangle</a></div><div class="ttdeci">~Triangle()</div><div class="ttdoc">Deconstructor Empty</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:25</div></div>
 <div class="ttc" id="aclass_triangle_html_a89f84ab2ef5de9f9a078c05bc6d45a2b"><div class="ttname"><a href="class_triangle.html#a89f84ab2ef5de9f9a078c05bc6d45a2b">Triangle::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;_t)</div><div class="ttdoc">Renders shape on screen.</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:49</div></div>
 <div class="ttc" id="aclass_triangle_html_acfbc6139849f8e74b0e36d1c9f6ce04d"><div class="ttname"><a href="class_triangle.html#acfbc6139849f8e74b0e36d1c9f6ce04d">Triangle::changeSize</a></div><div class="ttdeci">void changeSize(sf::Vector2f _delta)</div><div class="ttdoc">Changes shape's size depending on input (see also).</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:28</div></div>
 <div class="ttc" id="aclass_triangle_html_ae23676993502a9c177c6088b55507dd5"><div class="ttname"><a href="class_triangle.html#ae23676993502a9c177c6088b55507dd5">Triangle::setPosition</a></div><div class="ttdeci">void setPosition(sf::Vector2i _pos)</div><div class="ttdoc">Sets position for the shape indexator.</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:41</div></div>
-<div class="ttc" id="aclass_triangle_html_aee2a85bce9ea3a961bb5f232028102d5"><div class="ttname"><a href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle::Triangle</a></div><div class="ttdeci">Triangle(sf::Vector2i _pos)</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:3</div></div>
+<div class="ttc" id="aclass_triangle_html_aee2a85bce9ea3a961bb5f232028102d5"><div class="ttname"><a href="class_triangle.html#aee2a85bce9ea3a961bb5f232028102d5">Triangle::Triangle</a></div><div class="ttdeci">Triangle(sf::Vector2i _pos)</div><div class="ttdoc">Overridden contructor that creates an triangle with default dimensions.</div><div class="ttdef"><b>Definition:</b> Triangle.cpp:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
