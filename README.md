@@ -1,4 +1,4 @@
-# Drawing app  :  Version: 0.0.1
+# Drawing app  :  Version: 01
 This app lets you draw various shapes using SFML library
 
 Project Author: ***Stepans Kolontajs***
